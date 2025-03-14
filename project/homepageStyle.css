@@ -1,0 +1,17 @@
+body{
+    background-image: url(./TempMedia/Backgrounds/wallpaper.webp);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: fixed;
+    color: white;
+}
+
+
+#menu{
+    position: fixed;
+    right: 10px;
+    top: 40%;
+    bottom: 40%;
+    display: flex;
+    flex-direction: column;
+}
