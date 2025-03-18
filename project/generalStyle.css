@@ -1,0 +1,38 @@
+/*COLOR SCHEME
+Text: #ffffff
+Boxes: B1001E
+*/
+
+body{
+    /*Total Styling*/
+    color: #ffffff;
+    font-family: 'SoulFont';
+    text-shadow: 0px 0px 10px rgb(84, 48, 48);
+}
+
+@font-face {
+    font-family: "SoulFont";
+    src: url(./media/Fonts/LEMONMILK-Medium.otf);
+}
+
+
+#menu{
+    position: fixed;
+    right: 10px;
+    top: 25%;
+    bottom: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+}
+
+#menu:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px black;
+}
+
+#menuImage{
+    width: 100px;
+    height: 100px;
+}

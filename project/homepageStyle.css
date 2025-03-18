@@ -1,17 +1,25 @@
 body{
-    background-image: url(./TempMedia/Backgrounds/wallpaper.webp);
+    /*Background*/
+    background-image: url(./media/Backgrounds/wallpaper.webp);
     background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: fixed;
-    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+
+    /*Positioning*/
+    height: 4000px;
+    overflow-x: hidden;
 }
 
 
-#menu{
-    position: fixed;
-    right: 10px;
-    top: 40%;
-    bottom: 40%;
-    display: flex;
-    flex-direction: column;
+#title{
+    /*Positioning*/
+
+    /*Styling/Sizing*/
+    width: 800px;
+    font-size: 100px;
 }
+
+
+
+
+/*INFOBOXES*/
