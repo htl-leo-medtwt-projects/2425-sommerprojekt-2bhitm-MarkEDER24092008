@@ -13,13 +13,135 @@ body{
 
 #title{
     /*Positioning*/
-
+    margin-top: -10px;
     /*Styling/Sizing*/
     width: 800px;
     font-size: 100px;
 }
 
+#goUpButton{
+    /*Positioning*/
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    /*Styling/Sizing*/
+    border-radius: 50%;
+    width: 10%;
+    height: auto;
+    transform: rotate(180deg);
+
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#goUpButton:hover{
+    box-shadow: 10px 10px 20px rgb(104, 43, 43);
+    transform: rotate(-180deg);
+    transform: scale(1.1);
+}
+
+/*INFOBOXES & Co.*/
+.navButtons{
+    /*Positioning*/
+    position: relative;
+    text-align: center;
+    /*Styling/Sizing*/
+    background-color: rgb(77, 66, 66);
+    border-radius: 15%;
+    width: 3%;
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.5s, color 0.5s;
+}
+
+.navButtons:hover{
+    color: rgb(66, 28, 28);
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px rgb(104, 43, 43);
+}
+
+
+#introButton{
+    /*Positioning*/
+    position: absolute;
+    left: 15%;
+    top: 40%;
+}
+
+#aboutButton{
+    /*Positioning*/
+    position: absolute;
+    left: 40%;
+    top: 30%;
+}
+#moreButton{
+    /*Positioning*/
+    position: absolute;
+    left: 60%;
+    top: 35%;
+}
+
+.infoBoxes{
+    /*Sizing/Styling*/
+    font-size: 15px;
+    width: 30%;
+    height: auto;
+    padding: 30px;
+    background-color: rgb(77, 66, 66);
+    border-radius: 15%;
+}
 
 
 
-/*INFOBOXES*/
+#introBox{
+    /*Positioning*/
+    position: absolute;
+    top: 110%;
+    left: 5%;
+}
+
+
+#introImg{
+    /*Positioning*/
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    /*Sizing*/
+    width: 25%;
+    height: auto;
+}
+
+
+#aboutBox{
+    /*Positioning*/
+    position: absolute;
+    top: 230%;
+    left: 50%;
+}
+
+#aboutImg{
+    /*Positioning*/
+    position: absolute;
+    top: 230%;
+    /*Sizing*/
+    width: 25%;
+    left: 10%;
+    height: auto;
+}
+
+
+#moreBox{
+    /*Positioning*/
+    position: absolute;
+    top: 350%;
+    left: 3%;
+}
+
+#moreImg{
+    /*Positioning*/
+    position: absolute;
+    top: 350%;
+    left: 50%;
+    /*Sizing*/
+    width: 25%;
+    height: auto;
+}
+
