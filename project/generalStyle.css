@@ -5,11 +5,23 @@ Boxes: B1001E
 Boxes v.2: rgb(77, 66, 66)
 */
 
+:root{
+    --text: rgb(168, 134, 134);
+    --text2: rgb(66, 28, 28);
+    --box-background: rgb(77, 66, 66);
+    --box-shadow: rgb(84, 48, 48);
+}
+
 body{
+    /*Background*/
+    background-image: url(./media/Backgrounds/wallpaper.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     /*Total Styling*/
-    color: rgb(255, 255, 255);
+    color: var(--text);
     font-family: 'SoulFont';
-    text-shadow: 0px 0px 10px rgb(84, 48, 48);
+    text-shadow: 0px 0px 10px var(--text-shadow);
 }
 
 @font-face {
@@ -17,6 +29,14 @@ body{
     src: url(./media/Fonts/LEMONMILK-Medium.otf);
 }
 
+
+#title{
+    /*Positioning*/
+    margin-top: -10px;
+    /*Styling/Sizing*/
+    width: 800px;
+    font-size: 100px;
+}
 
 #menu{
     position: fixed;
@@ -26,7 +46,7 @@ body{
     display: flex;
     flex-direction: column;
     border-radius: 3%;
-    background-color: rgb(77, 66, 66);
+    background-color: var(--box-background);
     justify-content: center;
     transition: transform 0.2s, box-shadow 0.5s, right 0.2s;
 }
@@ -35,7 +55,7 @@ body{
     position: fixed;
     right: 20px;
     transform: scale(1.1);
-    box-shadow: 10px 10px 20px rgb(104, 43, 43);
+    box-shadow: 10px 10px 20px var(--box-shadow);
 }
 
 #menuImage{

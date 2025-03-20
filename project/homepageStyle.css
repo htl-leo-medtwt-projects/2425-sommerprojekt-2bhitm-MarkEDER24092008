@@ -1,22 +1,14 @@
-body{
-    /*Background*/
-    background-image: url(./media/Backgrounds/wallpaper.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+:root{
+    --text: rgb(168, 134, 134);
+    --text2: rgb(66, 28, 28);
+    --box-background: rgb(77, 66, 66);
+    --box-shadow: rgb(84, 48, 48);
+}
 
+body{
     /*Positioning*/
     height: 4000px;
     overflow-x: hidden;
-}
-
-
-#title{
-    /*Positioning*/
-    margin-top: -10px;
-    /*Styling/Sizing*/
-    width: 800px;
-    font-size: 100px;
 }
 
 #goUpButton{
@@ -29,14 +21,14 @@ body{
     width: 10%;
     height: auto;
     transform: rotate(180deg);
-
     transition: transform 0.5s, box-shadow 0.5s;
 }
 
 #goUpButton:hover{
-    box-shadow: 10px 10px 20px rgb(104, 43, 43);
+    box-shadow: 10px 10px 20px var(--box-shadow);
     transform: rotate(-180deg);
     transform: scale(1.1);
+    
 }
 
 /*INFOBOXES & Co.*/
@@ -49,13 +41,31 @@ body{
     border-radius: 15%;
     width: 3%;
     padding: 25px;
-    transition: transform 0.2s, box-shadow 0.5s, color 0.5s;
+    transition: transform 0.2s, box-shadow 0.5s, color 0.5s; 
+    animation: navButtonsNoHover 2s infinite alternate-reverse;
+    animation-delay: none;   
+}
+
+@keyframes navButtonsNoHover {
+    0%{transform: scale(1.0);}
+    100%{transform: scale(1.1);}
+    
 }
 
 .navButtons:hover{
-    color: rgb(66, 28, 28);
+    /*Animations*/
+    animation: navButtons 1s infinite alternate;
+    animation-delay: none; 
+    /*Styling*/
+    color: var(--text2);
     transform: scale(1.1);
     box-shadow: 10px 10px 20px rgb(104, 43, 43);
+    
+}
+
+@keyframes navButtons {
+    0%{transform: translateY(5px);}
+    100%{transform: translateY(-5px);}
 }
 
 
@@ -64,6 +74,7 @@ body{
     position: absolute;
     left: 15%;
     top: 40%;
+    animation-delay: 0.2s;
 }
 
 #aboutButton{
@@ -71,12 +82,14 @@ body{
     position: absolute;
     left: 40%;
     top: 30%;
+    animation-delay: 0.1s;
 }
 #moreButton{
     /*Positioning*/
     position: absolute;
     left: 60%;
     top: 35%;
+    animation-delay: 0.4s;
 }
 
 .infoBoxes{
@@ -85,7 +98,7 @@ body{
     width: 30%;
     height: auto;
     padding: 30px;
-    background-color: rgb(77, 66, 66);
+    background-color: var(--box-background);
     border-radius: 15%;
 }
 

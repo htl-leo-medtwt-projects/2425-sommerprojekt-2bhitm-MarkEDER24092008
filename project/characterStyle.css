@@ -1,0 +1,61 @@
+:root{
+    --text: rgb(168, 134, 134);
+    --text2: rgb(66, 28, 28);
+    --box-background: rgb(77, 66, 66);
+    --box-shadow: rgb(84, 48, 48);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+/*Zeile 3-49: gefunden auf Codepen*/
+.gallery {
+    --s: 130px;
+    display: grid;
+    gap: 5px;
+    position: fixed;
+    left: 15%;
+    top: 40%;
+  }
+  .gallery input {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    inset: calc(50% - var(--s)/3);
+    cursor: pointer;
+    --g: linear-gradient(#fff 0 0) no-repeat;
+    background: var(--g) 50%/60% 3px,var(--g) 50%/3px 60%,var(--box-background);
+    transition: 1.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .gallery > img {
+    width: var(--s);
+    aspect-ratio: 1;
+    grid-area: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: scale(.5);
+    transition: 1s calc((var(--i) - 1)*.1s);
+  }
+  .gallery > img:nth-of-type(1) {--i:1;}
+  .gallery > img:nth-of-type(2) {--i:2;}
+  .gallery > img:nth-of-type(3) {--i:3;}
+  .gallery > img:nth-of-type(4) {--i:4;}
+  .gallery > img:nth-of-type(5) {--i:5;}
+  .gallery > img:nth-of-type(6) {--i:6;}
+  .gallery > img:nth-of-type(7) {--i:7;}
+  .gallery > img:nth-of-type(8) {--i:8;}
+  .gallery > img:nth-of-type(9) {--i:9;}
+  
+  .gallery > input:checked ~ img {
+    transform: 
+      rotate(calc(var(--i)* 360deg/8)) translate(calc(1.5*var(--s))) 
+      rotate(calc(var(--i)*-360deg/8));
+  }
+  .gallery > input:checked {
+    transform: rotate(135deg)
+  }
