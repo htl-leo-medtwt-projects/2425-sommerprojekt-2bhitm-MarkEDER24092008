@@ -24,9 +24,15 @@ body{
     text-shadow: 0px 0px 10px var(--text-shadow);
 }
 
+
 @font-face {
     font-family: "SoulFont";
     src: url(./media/Fonts/LEMONMILK-Medium.otf);
+}
+
+@font-face {
+    font-family: "TitleFont";
+    src: url(./media/Fonts/osaka.ttf);
 }
 
 
@@ -36,6 +42,7 @@ body{
     /*Styling/Sizing*/
     width: 800px;
     font-size: 100px;
+    font-family: TitleFont;
 }
 
 #menu{
@@ -61,4 +68,34 @@ body{
 #menuImage{
     width: 100px;
     height: 100px;
+}
+
+@media screen and (max-width: 500px){
+    body{
+        /*Background*/
+        background-image: url(./media/Backgrounds/phoneWallpaper.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        /*Total Styling*/
+        color: var(--text);
+        font-family: 'SoulFont';
+        text-shadow: 0px 0px 10px var(--text-shadow);
+    }
+
+    #menu{
+    position: fixed;
+    top: auto;
+    bottom: 0%;
+    left: 10%;
+    right: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3%;
+    background-color: var(--box-background);
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.5s, right 0.2s;
+    }
+    
 }

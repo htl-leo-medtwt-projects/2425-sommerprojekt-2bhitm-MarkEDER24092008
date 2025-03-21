@@ -59,3 +59,12 @@ body{
   .gallery > input:checked {
     transform: rotate(135deg)
   }
+
+#characterOutput{
+   position: fixed;
+   background-color: white;
+   padding: 5%;
+   width: 20%;
+   height: 20%;
+   right: 20%;
+}
