@@ -1,3 +1,6 @@
+
+
+
 :root{
     --text: rgb(168, 134, 134);
     --text2: rgb(66, 28, 28);
@@ -7,15 +10,16 @@
 
 body{
     overflow-x: hidden;
+    
 }
 
 
-/*Zeile 3-49: gefunden auf Codepen*/
+/*Zeile 13-61: Codepen-Kopie*/
 .gallery {
     --s: 130px;
     display: grid;
     gap: 5px;
-    position: fixed;
+    position:absolute;
     left: 15%;
     top: 40%;
   }
@@ -61,10 +65,20 @@ body{
   }
 
 #characterOutput{
-   position: fixed;
-   background-color: white;
-   padding: 5%;
-   width: 20%;
-   height: 20%;
-   right: 20%;
+    display: none;
+   background-color: var(--box-background);
+   margin-top: 60%;
+   margin-bottom: 10%;
+
+   margin-left: 20%;
+   margin-right: 20%;
+}
+
+#artOutput{
+    display: none;
+    position: absolute;
+    padding: 5%;
+    width: 20%;
+    height: 20%;
+    right: 20%;
 }

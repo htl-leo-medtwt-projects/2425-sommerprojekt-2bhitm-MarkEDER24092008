@@ -8,7 +8,7 @@
     <h1 id="title">Characters</h1>
     <link rel="stylesheet" href="./generalStyle.css">
     <link rel="stylesheet" href="./characterStyle.css">
-    <script src="./characterScript.js" defer></script>
+    <script src="./script.js" defer></script>
 
     <div id="menu">
         <a href="./homepage.html"><img id="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
@@ -20,20 +20,22 @@
 
     
     <div class="gallery">
-        <input type="checkbox">
+        <input onclick="hideCharacterOutput()" type="checkbox">
         <img onclick="showCharacterInfo(0)" src="./media/Figures/Characters/Airbender.gif">
         <img onclick="showCharacterInfo(1)" src="./media/Figures/Characters/Assassin.gif">
         <img onclick="showCharacterInfo(2)" src="./media/Figures/Characters/Engineer.gif">
         <img onclick="showCharacterInfo(3)" src="./media/Figures/Characters/Knight.gif">
         <img onclick="showCharacterInfo(4)" src="./media/Figures/Characters/Rogue.gif">
         <img onclick="showCharacterInfo(5)" src="./media/Figures/Characters/SwordMaster.gif">
-        <img onclick="showCharacterInfo(6)" src="./media/Figures/Characters/TheBeheaded.gif">
-        <img onclick="showCharacterInfo(7)" src="./media/Figures/Characters/Paladin.gif">
+        <img onclick="showCharacterInfo(6)" src="./media/Figures/Characters/Demonmancer.gif">
+        <img onclick="showCharacterInfo(7)" src="./media/Figures/Characters/Druid.gif">
       </div>
+
+      <div id="artOutput"></div>
 
 
       <div id="characterOutput">
-        <h1>characters</h1>
+        
       </div>
 </body>
 </html>

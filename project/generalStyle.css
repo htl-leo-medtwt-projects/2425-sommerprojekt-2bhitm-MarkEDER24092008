@@ -32,18 +32,29 @@ body{
 
 @font-face {
     font-family: "TitleFont";
-    src: url(./media/Fonts/osaka.ttf);
+    src: url(./media/Fonts/Bankai\ Demo\ Version.otf);
 }
 
 
 #title{
     /*Positioning*/
-    margin-top: -10px;
+    margin-left: 10px;
+
     /*Styling/Sizing*/
     width: 800px;
     font-size: 100px;
     font-family: TitleFont;
+    animation: title 20s infinite linear;
 }
+
+@keyframes title{
+    0%{color: var(--text);}
+    30%{color: var(--text2);}
+    60%{color: rgb(rgb(50, 111, 131));}
+    100%{color: rgb(34, 29, 29);}
+}
+
+
 
 #menu{
     position: fixed;
