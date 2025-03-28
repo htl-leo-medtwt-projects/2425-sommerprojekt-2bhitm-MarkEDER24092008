@@ -8,12 +8,6 @@ Ultimate Ability (Best of 3)
 
 
 
-
-
-
-
-
-
 //HOME PAGE
 function scrollToInfo() {
     window.scrollBy({ top: 110 * 8, behavior: 'smooth' }); 
@@ -29,6 +23,10 @@ function scrollToMore() {
 
 function scrollToTop(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startTest(){
+    document.getElementById('menu').style.display = 'none';
 }
 
 
