@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./homepageStyle.css">
     <script src="./script.js" defer></script>
 </head>
-<body>
+<body id="body">
+    <div id="quizRemainder">
     <h1 id="title">Welcome To Soul Knight</h1>
 
     <div id="menu">
@@ -54,11 +55,69 @@ roguelike and pixel-art game lovers.
     <img id="moreImg" src="./media/homeImages/moreImg.webp" alt="">
 
 
+    <div id="quizStart">
+        <h2>Test your knowledge about Soul Knight!</h2>
+        <p>Answer the questions below to see how well you know the game.</p>
+        <button id="StartQuiz" onclick="startQuiz()">Start Quiz</button>
+    </div>
 
+    <div id="quizResults">YOUR RESULT</div>
+
+    </div>
+
+
+    <div id="quizInfo">
+        <h1>Before you start:</h1>
+        <h4>You currently are in Zen Mode, so you can't search up any answers while taking the quiz. </h4>
+        <h3>If you answer at least four correctly, you will be rewarded...</h3>
+    </div>
 
     <div id="quiz">
-        <button onclick="startTest()" id="StartTest">Take a test</button>
+        <form id="quizForm">
+    
+            <div class="question-slide" id="slide1" style="display: block;">
+                <h3>Which Game Studio made Soul Knight</h3>
+                <label><input type="radio" name="q1" value="a"> GameHouse</label><br>
+                <label><input type="radio" name="q1" value="b"> ChillyRoom</label><br>
+                <label><input type="radio" name="q1" value="c"> Luì Dhåo</label><br>
+                <button type="button" onclick="nextSlide(1)">Next</button>
+            </div>
+    
+            <div class="question-slide" id="slide2" style="display: none;">
+                <h3>What is the main objective in Soul Knight?</h3>
+                <label><input type="radio" name="q2" value="a"> Build a base and farm resources</label><br>
+                <label><input type="radio" name="q2" value="b"> Rescue a magical stone from aliens</label><br>
+                <label><input type="radio" name="q2" value="c"> Capture and train monsters</label><br>
+                <button type="button" onclick="nextSlide(2)">Next</button>
+            </div>
+    
+            <div class="question-slide" id="slide3" style="display: none;">
+                <h3>Which currency is primarily used to unlock characters?</h3>
+                <label><input type="radio" name="q3" value="a"> Gems</label><br>
+                <label><input type="radio" name="q3" value="b"> Coins</label><br>
+                <label><input type="radio" name="q3" value="c"> Energy Orbs</label><br>
+                <button type="button" onclick="nextSlide(3)">Next</button>
+            </div>
+    
+            <div class="question-slide" id="slide4" style="display: none;">
+                <h3>What does the Knight’s starting ability do?</h3>
+                <label><input type="radio" name="q4" value="a"> Summons a shield</label><br>
+                <label><input type="radio" name="q4" value="b"> Fires a barrage of bullets</label><br>
+                <label><input type="radio" name="q4" value="c"> Heals the player</label><br>
+                <button type="button" onclick="nextSlide(4)">Next</button>
+            </div>
+    
+            <div class="question-slide" id="slide5" style="display: none;">
+                <h3>What happens when you die in a dungeon run?</h3>
+                <label><input type="radio" name="q5" value="a"> You restart from the last level</label><br>
+                <label><input type="radio" name="q5" value="b"> You drop your loot but keep your XP</label><br>
+                <label><input type="radio" name="q5" value="c"> The run ends and you return to the Lobby</label><br>
+                <button type="submit" onclick="showResults()" id="StartTest">Submit Quiz</button>
+            </div>
+    
+        </form>
     </div>
+
 
 </body>
 </html>

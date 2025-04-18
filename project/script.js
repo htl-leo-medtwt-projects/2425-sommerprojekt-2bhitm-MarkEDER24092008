@@ -30,6 +30,68 @@ function startTest(){
 }
 
 
+
+
+
+//Quiz
+
+function startQuiz() {
+    document.getElementById('quizInfo').style.display = 'block';
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('quizRemainder').style.display = 'none';
+    document.getElementById('body').style.overflowY = 'hidden';
+    document.getElementById('quiz').style.display = 'block';
+    document.getElementById('quiz').style.top = '350%';
+    document.getElementById('quizStart').style.display = 'none';
+ }
+
+
+function nextSlide(current) {
+    document.getElementById(`slide${current}`).style.display = "none";
+    const next = document.getElementById(`slide${current + 1}`);
+    if (next) next.style.display = "block";
+}
+
+
+function showResults(event) {
+    event.preventDefault(); // Verhindert das Standard-Formularverhalten
+    evaluateQuiz();
+    return false;
+}
+
+function evaluateQuiz() {
+    const correctAnswers = {
+        q1: "b",
+        q2: "b",
+        q3: "a",
+        q4: "b",
+        q5: "c"
+    };
+
+    let score = 0;
+    let total = Object.keys(correctAnswers).length;
+
+    for (let key in correctAnswers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correctAnswers[key]) {
+            score++;
+        }
+    }
+
+    // Quiz ausblenden und Resultat anzeigen
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("quizRemainder").style.display = "block";
+    document.getElementById("quizResults").innerHTML = `${score}/ 5 correct`;
+}
+
+
+
+
+
+
+//<editor-fold desc="Character Page">
+//</editor-fold>
+
 //CHARACTER PAGE
 let characterIntel = [
     {
@@ -125,22 +187,26 @@ let characterIntel = [
 
 
 function showCharacterInfo(i){
-    document.getElementById('artOutput').style.display = 'block';
     document.getElementById('characterOutput').style.display = 'block';
-
-    console.log("showing info for index: " + i);
-
-    document.getElementById('characterOutput').innerHTML =  
-    `<h1>${characterIntel[i].name}</h1>
-    <h3>HP: ${characterIntel[i].hp}, Armor: ${characterIntel[i].armor}</h3>
-    <img src="${characterIntel[i].art}">
-    `;
-
-    document.getElementById('artOutput').innerHTML = `<img src="${characterIntel[i].art}">`;
+    document.getElementById('characterOutput').innerHTML = `
+    <div class="character-card">
+      <img src="${characterIntel[i].art}" alt="${characterIntel[i].name} Art" class="character-art" />
+      <div class="profile-section">
+        <img src="${characterIntel[i].profile}" alt="${characterIntel[i].name} Profile" class="character-profile" />
+        <h2>${characterIntel[i].name}</h2>
+        <p><strong>HP:</strong> ${characterIntel[i].hp} | <strong>Armor:</strong> ${characterIntel[i].armor}</p>
+        <p><strong>Main Attack:</strong> ${characterIntel[i].mainAttack}</p>
+        <p><strong>Passive Ability:</strong> ${characterIntel[i].passiveAbility}</p>
+        <div class="special-ability">
+          <img src="${characterIntel[i].abilityImg}" alt="${characterIntel[i].name} Special Ability" class="ability-image" />
+          <p><strong>Special Ability:</strong> ${characterIntel[i].specialAbility}</p>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function hideCharacterOutput(){
     document.getElementById('characterOutput').style.display = 'none';
-    document.getElementById('artOutput').style.display = 'none';
-
 }
+

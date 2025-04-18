@@ -161,9 +161,60 @@ body{
 
 /*Quiz*/
 
+#quizStart{
+    display: block;
+     /*Positioning*/
+     position: absolute;
+    
+     top: 400%;
+     left: 20%;
+     
+     right: 20%;
+     text-align: center;
+     /*Sizing/Styling*/
+     width: auto;
+     height: auto;
+     background-color: var(--box-background);
+     border-radius: 2%;
+     padding: 30px;
+}
+
 #quiz{
+    display: none;
     /*Positioning*/
-    position: relative;
-    top: auto;
-    bottom: 10%;
+    position: absolute;
+    
+    top: 400%;
+    left: 20%;
+    right: 20%;
+    text-align: center;
+    /*Sizing/Styling*/
+    width: auto;
+    height: auto;
+    background-color: var(--box-background);
+    border-radius: 2%;
+    padding: 30px;
+}
+
+
+/*More*/
+
+#quizResults{
+    display: block;
+    /*Positioning*/
+    position: absolute;
+    
+    right: 10%;
+    top: 5%;
+    text-align: center;
+    /*Sizing/Styling*/
+    width: auto;
+    height: auto;
+    background-color: var(--box-background);
+    border-radius: 2%;
+    padding: 20px;
+}
+
+#quizInfo{
+    display: none;
 }
