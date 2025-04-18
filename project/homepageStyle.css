@@ -158,3 +158,12 @@ body{
     height: auto;
 }
 
+
+/*Quiz*/
+
+#quiz{
+    /*Positioning*/
+    position: relative;
+    top: auto;
+    bottom: 10%;
+}
