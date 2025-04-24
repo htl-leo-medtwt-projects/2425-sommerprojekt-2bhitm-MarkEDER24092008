@@ -33,7 +33,58 @@
 
 
       <div id="characterOutput">
-        
       </div>
+
+      <div id="characterBuilder" style="width: 300px;">
+        <h2 id="characterBuilderTitle">Character Builder</h2>
+        <p>Create your character from head to toe! </p> <p> Then, we will evaluate his combat skills and give him/her a rating out of 10</p>
+        <h3 id="characterBuilderRedirecter" onclick="openCharacterBuilder()">Take me there</h3>
+        </div>
+
+        <div id="characterBuilderOutput">
+            <div id="blackScreen"></div>
+          <div id="characterMakingScreen">
+
+            <img onclick="randomizeCharacter()" id="randomizerButton" src="./media/Misc/RandomizerButton.png" width="50px" height="auto" alt="randomize">
+
+        <div id="characterBox" style="z-index: 999; position: absolute;">
+            <div id="sliderImageContainer">
+            <img class="sliderImages" class="part-image" id="sliderHeadImage" src="./media/Figures/CustomFigureElements/Head1.png" width="200" height="auto" alt="slider image">
+            <img class="sliderImages" class="part-image" id="sliderTorsoImage" src="./media/Figures/CustomFigureElements/Torso1.png" width="180" height="auto" alt="slider image">
+            <img class="sliderImages" class="part-image" id="sliderLegsImage" src="./media/Figures/CustomFigureElements/Legs1.png" width="100" height="auto" alt="slider image">
+          </div>
+        </div>
+
+        <button id="strengthMeasureButton" onclick="evaluateStrength()">Done</button>
+
+        
+        <div id="imageModders" style="position: absolute; z-index: 10000;">
+          <div>
+            <h2>Head</h2>
+            <button style="background-color: slategray;" onclick="prevHeadImage()"><-</button>
+            <button style="background-color: slategray;" onclick="nextHeadImage()">-></button>
+                <input class="rangerStyle" type="range" id="imageWidthRange"min="50"max="400"value="200"oninput="updateHeadWidth(this.value)"/>
+          </div>
+
+          <div>
+            <h2>Torso</h2>
+            <button style="background-color: rgb(85, 94, 102);" onclick="prevTorsoImage()"><-</button>
+            <button style="background-color: rgb(85, 94, 102);" onclick="nextTorsoImage()">-></button>
+                <input class="rangerStyle" type="range" id="imageWidthRange"min="50"max="400"value="200"oninput="updateTorsoWidth(this.value)"/>
+              
+          </div>
+
+          <div>
+            <h2>Legs</h2>
+            <button style="background-color: rgb(144, 124, 112);" onclick="prevLegsImage()"><-</button>
+            <button style="background-color: rgb(144, 124, 112);" onclick="nextLegsImage()">-></button>
+            <input class="rangerStyle" type="range" id="imageWidthRange"min="50"max="400"value="200"oninput="updateLegsWidth(this.value)"/>
+          </div>
+        </div>
+    
+          <div id="strengthMeasureBox"></div>
+          </div>
+          <button onclick="exitCharacterBuilder()" id="exitCharacterBuilder">X</button>
+          </div>
 </body>
 </html>

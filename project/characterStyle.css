@@ -2,7 +2,7 @@
 
 
 :root{
-    --text: rgb(168, 134, 134);
+    --text: rgb(200, 175, 175);
     --text2: rgb(66, 28, 28);
     --box-background: rgb(77, 66, 66);
     --box-shadow: rgb(84, 48, 48);
@@ -33,6 +33,7 @@ body{
     background: var(--g) 50%/60% 3px,var(--g) 50%/3px 60%,var(--box-background);
     transition: 1.5s;
     -webkit-appearance: none;
+    appearance: none;
     -moz-appearance: none;
     appearance: none;
   }
@@ -111,3 +112,165 @@ body{
     border-radius: 8px;
   }
   
+  #characterBuilder{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    background-color: var(--box-background);
+    height: auto;
+    width: auto;
+    padding: 20px;
+  }
+
+  #charBuildButton{
+    align-self: center;
+    height: 70px;
+    width: 100px;
+    border-radius: 40%;
+    background-color: var(--box-background);
+  }
+
+  #characterMakingScreen{
+    position: fixed;
+    top: 20%;
+    bottom: 20%;
+    left: 30%;
+    right: 30%;
+    background-color: var(--box-background);
+    z-index: 1500;
+  }
+
+  #blackScreen{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 999;
+  }
+  #exitCharacterBuilder{
+    position: fixed;
+    transform: scale(3);
+    border-radius: 20%;
+    font-weight: bolder;
+    top: 20%;
+    right: 20%;
+    background-color: var(--box-background);
+    z-index: 1500;
+  }
+
+  #sliderImageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #characterBuilderOutput{
+    display: none;
+    /*CHANGE TO NONE*/
+  }
+
+
+  .rangerStyle {
+    -webkit-appearance: none;
+  height: 10px;
+  background: linear-gradient(to right, #d66e6e 50%, rgb(77, 58, 58) 50%);
+  border-radius: 5px;
+  outline: none;
+  transition: background 450ms ease-in;
+  }
+  
+
+  .rangerStyle::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background: url('./media/Misc/sliderButton.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .rangerStyle::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    background: url('./media/SliderIcons/customThumb.png') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+
+  #sliderHeadImage{
+    margin-bottom: -25px;
+  }
+
+  #randomizerButton{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    animation: randomizerButtonAnimation 0.5s infinite;
+  }
+
+  @keyframes randomizerButtonAnimation {
+    0% { transform: scale(1); transform: translateX(0px);}
+    50% { transform: scale(1.05); transform: translateX(3px); }
+    100% { transform: scale(1); transform: translateX(0px);}
+    
+  }
+
+
+  #imageModders{
+    bottom: 0%;
+    left: 0%;
+  }
+
+  #imageModders button{
+    transition: background-color 0.3s box-shadow 0.3s;
+    }
+
+  #imageModders button:hover{
+    background-color: rgb(36, 26, 26);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    }
+  
+    #characterBox{
+      left: 20%;
+      right: 20%;
+    }
+
+    #strengthMeasureButton{
+      background-color: rgb(92, 83, 83);
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      border-radius: 15%;
+      padding: 6px;
+      padding: 10px;
+      font-weight: bolder;
+    }
+
+    #characterBuilderRedirecter{
+      transition: color 0.5s, text-shadow 0.8s;
+    }
+
+    #characterBuilderRedirecter:hover{
+      color: rgb(110, 44, 44);
+      text-shadow: 5px 10px 10px black;
+    }
+
+    button{
+      transition: box-shadow 0.5s, background-color 0.3s;
+    }
+
+
+    button:hover{
+      box-shadow: 5px 5px 10px rgb(56, 14, 14);
+      background-color: darkred;
+    }
+    

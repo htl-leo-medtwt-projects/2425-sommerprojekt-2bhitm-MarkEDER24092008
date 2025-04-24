@@ -7,6 +7,13 @@ Ultimate Ability (Best of 3)
 */
 
 
+//import { gsap } from "gsap";
+    
+//import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+//gsap.registerPlugin(ScrollTrigger);
+
 
 //HOME PAGE
 function scrollToInfo() {
@@ -210,3 +217,124 @@ function hideCharacterOutput(){
     document.getElementById('characterOutput').style.display = 'none';
 }
 
+//SLIDER
+
+const headImages = [
+    "./media/Figures/CustomFigureElements/Head1.png",
+    "./media/Figures/CustomFigureElements/Head2.png",
+    "./media/Figures/CustomFigureElements/Head3.png",
+    "./media/Figures/CustomFigureElements/Head4.png"
+  ];
+
+  let headCurrent = 0;
+  const headSlider = document.getElementById("sliderHeadImage");
+
+  function nextHeadImage() {
+    headCurrent = (headCurrent + 1) % headImages.length;
+    headSlider.src = headImages[headCurrent];    
+  }
+
+  function prevHeadImage() {
+    headCurrent = (headCurrent - 1 + headImages.length) % headImages.length;
+    headSlider.src = headImages[headCurrent];    
+  }
+
+
+  const torsoImages = [
+    "./media/Figures/CustomFigureElements/Torso1.png",
+    "./media/Figures/CustomFigureElements/Torso2.png",
+    "./media/Figures/CustomFigureElements/Torso3.png",
+    "./media/Figures/CustomFigureElements/Torso4.png"
+  ];
+  let torsoCurrent = 0;
+  const torsoSlider = document.getElementById("sliderTorsoImage");
+
+  function nextTorsoImage() {
+    torsoCurrent = (torsoCurrent + 1) % torsoImages.length;
+    torsoSlider.src = torsoImages[torsoCurrent];    
+  }
+
+  function prevTorsoImage() {
+    torsoCurrent = (torsoCurrent - 1 + torsoImages.length) % torsoImages.length;
+    torsoSlider.src = torsoImages[torsoCurrent];    
+  }
+
+
+
+  const legsImages = [
+    "./media/Figures/CustomFigureElements/Legs1.png",
+    "./media/Figures/CustomFigureElements/Legs2.png",
+    "./media/Figures/CustomFigureElements/Legs3.png",
+    "./media/Figures/CustomFigureElements/Legs4.png"
+  ];
+
+  let legsCurrent = 0;
+  const legsSlider = document.getElementById("sliderLegsImage");
+
+  function nextLegsImage() {
+    legsCurrent = (legsCurrent + 1) % legsImages.length;
+    legsSlider.src = legsImages[legsCurrent];    
+  }
+
+  function prevLegsImage() {
+    legsCurrent = (legsCurrent - 1 + legsImages.length) % legsImages.length;
+    legsSlider.src = legsImages[legsCurrent];    
+  }
+
+  function randomizeCharacter(){
+    const randomHead = Math.floor(Math.random() * headImages.length);
+    const randomTorso = Math.floor(Math.random() * torsoImages.length);
+    const randomLegs = Math.floor(Math.random() * legsImages.length);
+    headCurrent = randomHead;
+    torsoCurrent = randomTorso;
+    legsCurrent = randomLegs;
+    headSlider.src = headImages[headCurrent];
+    torsoSlider.src = torsoImages[torsoCurrent];
+    legsSlider.src = legsImages[legsCurrent];
+  }
+
+  function openCharacterBuilder(){
+    document.getElementById('characterBuilderOutput').style.display = 'block';
+    document.getElementById('body').style.overflowY = 'hidden';
+    document.getElementById('characterBuilderOutput').style.top = '350%';
+    document.getElementById('menu').style.display = 'none';
+  }
+
+
+  function exitCharacterBuilder(){
+    document.getElementById('characterBuilderOutput').style.display = 'none';
+    document.getElementById('body').style.overflowY = 'visible';
+  }
+
+
+  function updateHeadWidth(value) {
+    const head = document.getElementById("sliderHeadImage");
+    if (head) head.style.width = value + "px";
+  }
+
+  function updateTorsoWidth(value) {
+    const torso = document.getElementById("sliderTorsoImage");
+    if (torso) torso.style.width = value + "px";
+  }
+
+  function updateLegsWidth(value) {
+    const legs = document.getElementById("sliderLegsImage");
+    if (legs) legs.style.width = value + "px";
+  }
+
+  const range = document.getElementById('imageWidthRange');
+
+
+
+range.addEventListener('input', function () {
+  const min = this.min;
+  const max = this.max;
+  const val = this.value;
+
+  const percent = ((val - min) / (max - min)) * 100;
+  this.style.background = `linear-gradient(to right, #d66e6e ${percent}%, rgb(77, 58, 58) ${percent}%)`;
+});
+
+function evaluateStrength(){
+
+}
