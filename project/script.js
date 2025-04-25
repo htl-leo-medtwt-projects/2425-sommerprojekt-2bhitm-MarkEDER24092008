@@ -7,15 +7,22 @@ Ultimate Ability (Best of 3)
 */
 
 
-//import { gsap } from "gsap";
-    
-//import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
-//gsap.registerPlugin(ScrollTrigger);
-
 
 //HOME PAGE
+
+
+gsap.to("#introBox", {
+    scrollTrigger: {
+        trigger: "#introBox",
+        toggleActions: "play none none reverse",
+        markers: true,
+    },
+    x: 400,
+    opacity: 1
+});
+//Fehler Anschauen
+
+
 function scrollToInfo() {
     window.scrollBy({ top: 110 * 8, behavior: 'smooth' }); 
 }
@@ -40,7 +47,9 @@ function startTest(){
 
 
 
-//Quiz
+//********************* 
+//********Quiz*********
+//********************* 
 
 function startQuiz() {
     document.getElementById('quizInfo').style.display = 'block';
@@ -92,14 +101,10 @@ function evaluateQuiz() {
 }
 
 
+//********************* 
+//****CHARACTER PAGE***
+//********************* 
 
-
-
-
-//<editor-fold desc="Character Page">
-//</editor-fold>
-
-//CHARACTER PAGE
 let characterIntel = [
     {
         name: "Airbender",
@@ -217,7 +222,9 @@ function hideCharacterOutput(){
     document.getElementById('characterOutput').style.display = 'none';
 }
 
-//SLIDER
+//********************* 
+//*******SLIDER********
+//********************* 
 
 const headImages = [
     "./media/Figures/CustomFigureElements/Head1.png",
