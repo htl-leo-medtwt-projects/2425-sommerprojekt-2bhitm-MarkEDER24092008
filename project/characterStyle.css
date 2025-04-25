@@ -169,12 +169,12 @@ body{
 
   #characterBuilderOutput{
     display: none;
-    /*CHANGE TO NONE*/
-  }
+  } 
 
+  /*************RANGER************/
 
   .rangerStyle {
-    -webkit-appearance: none;
+          -webkit-appearance: none;
   height: 10px;
   background: linear-gradient(to right, #d66e6e 50%, rgb(77, 58, 58) 50%);
   border-radius: 5px;
