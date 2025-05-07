@@ -57,6 +57,8 @@
 
         <button id="strengthMeasureButton" onclick="evaluateStrength()">Done</button>
 
+
+        <input type="value" id="nameInput" placeholder="Name your character!">
         
         <div id="imageModders" style="position: absolute; z-index: 10000;">
           <div>
@@ -82,7 +84,11 @@
           </div>
         </div>
     
+        <div id="strengthContainer" style="display: none;">       
+           <h3 id="strengthPreMessage">Your Character's Strength is: </h3>
           <div id="strengthMeasureBox"></div>
+        </div>
+
           </div>
           <button onclick="exitCharacterBuilder()" id="exitCharacterBuilder">X</button>
           </div>

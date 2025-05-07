@@ -13,6 +13,11 @@ body{
     
 }
 
+@font-face {
+  font-family: Gothic;
+  src: url(./media/Fonts/Gothicha.ttf);
+}
+
 
 /*Zeile 13-61: Codepen-Kopie*/
 .gallery {
@@ -175,6 +180,7 @@ body{
 
   .rangerStyle {
           -webkit-appearance: none;
+          appearance: none;
   height: 10px;
   background: linear-gradient(to right, #d66e6e 50%, rgb(77, 58, 58) 50%);
   border-radius: 5px;
@@ -244,17 +250,6 @@ body{
       right: 20%;
     }
 
-    #strengthMeasureButton{
-      background-color: rgb(92, 83, 83);
-      position: absolute;
-      right: 5%;
-      top: 5%;
-      border-radius: 15%;
-      padding: 6px;
-      padding: 10px;
-      font-weight: bolder;
-    }
-
     #characterBuilderRedirecter{
       transition: color 0.5s, text-shadow 0.8s;
     }
@@ -273,4 +268,41 @@ body{
       box-shadow: 5px 5px 10px rgb(56, 14, 14);
       background-color: darkred;
     }
+
+    #strengthMeasureButton{
+      background-color: rgb(92, 83, 83);
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      border-radius: 15%;
+      padding: 6px;
+      padding: 10px;
+      font-weight: bolder;
+    }
+
+    #nameInput{
+      position: absolute;
+      top: 40%;
+      background-color: rgb(92, 83, 83);
+      border-radius: 15%;
+      padding: 6px;
+      padding: 10px;
+      font-weight: bolder;
+    }
     
+    #strengthPreMessage{
+      position: absolute;
+      bottom: 30%;
+      right: 2%;
+      font-weight: bolder;
+    }
+
+  #strengthMeasureBox{
+    position: absolute;
+    bottom: 5%;
+    right: 20%;
+    font-size: 100px;
+    font-style: oblique;
+    text-shadow: 10px 20px 10px black;
+    font-family: Gothic;
+  }

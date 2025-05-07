@@ -1,26 +1,7 @@
-/*
-Name
-Hp / Armor
-Main Weapon
-Passive Ability
-Ultimate Ability (Best of 3)
-*/
+//***********************
+//******HOME PAGE********
+//***********************
 
-
-
-//HOME PAGE
-
-
-gsap.to("#introBox", {
-    scrollTrigger: {
-        trigger: "#introBox",
-        toggleActions: "play none none reverse",
-        markers: true,
-    },
-    x: 400,
-    opacity: 1
-});
-//Fehler Anschauen
 
 
 function scrollToInfo() {
@@ -42,9 +23,6 @@ function scrollToTop(){
 function startTest(){
     document.getElementById('menu').style.display = 'none';
 }
-
-
-
 
 
 //********************* 
@@ -70,10 +48,12 @@ function nextSlide(current) {
 
 
 function showResults(event) {
-    event.preventDefault(); // Verhindert das Standard-Formularverhalten
+    event.preventDefault();
     evaluateQuiz();
     return false;
 }
+
+//ÜBERPRÜFEN
 
 function evaluateQuiz() {
     const correctAnswers = {
@@ -333,15 +313,294 @@ const headImages = [
 
 
 
-range.addEventListener('input', function () {
-  const min = this.min;
-  const max = this.max;
-  const val = this.value;
 
-  const percent = ((val - min) / (max - min)) * 100;
-  this.style.background = `linear-gradient(to right, #d66e6e ${percent}%, rgb(77, 58, 58) ${percent}%)`;
-});
 
 function evaluateStrength(){
+  const strength = Math.floor(Math.random() * 10) + 1;
+  let heroClass;
+  let name = document.getElementById('nameInput').value;
 
+  if (name === "") {
+    name = "Your Character";
+  }
+
+  switch(strength){
+    case 0:
+      heroClass = "E";
+      break;
+    case 1:
+    case 2:
+    case 3:
+      heroClass = "D";
+      break
+    case 4:
+    case 5:
+      heroClass = "C";
+      break;
+    case 6:
+    case 7:
+      heroClass = "B";
+      break;
+    case 8:
+    case 9:
+      heroClass = "A";
+      break;
+    case 10:
+      heroClass = "S";
+      break;
+  }
+
+  document.getElementById('strengthContainer').style.display = 'block';
+  document.getElementById('strengthPreMessage').innerHTML = `${name}'s strength is: ${strength}`;
+  document.getElementById('strengthMeasureBox').innerHTML = heroClass;
+  if(strength > 9){
+  document.getElementById('strengthMeasureBox').style.color = 'gold';
+  }else{
+    document.getElementById('strengthMeasureBox').style.color = 'rgb(200,175,175)';
+  }
+}
+
+
+
+//*********************
+//****WORLDS PAGE******
+//*********************
+
+const worldDescriptions = [
+  {
+    name: "Forest",
+    description: "A vibrant woodland full of tall trees, mossy stones, and ancient ruins. Swarming with goblins, bats, and archers, it’s the perfect starting ground—simple, yet swarming with aggressive packs.",
+    img: "./media/Backgrounds/Worlds/World1.1.gif",
+    audio: "./media/Audio/ForestTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Fire.webp",
+    resilience: "./media/Misc/BuffDebuffs/Poison.webp"
+  },
+  {
+    name: "Glacier",
+    description: "A frozen expanse with icy floors and glacial cliffs. Frost mages, wolves, and Yetis attack with chilling projectiles, while the slick terrain keeps players on edge with movement hazards.",
+    img: "./media/Backgrounds/Worlds/World1.2.gif",
+    audio: "./media/Audio/GlacierTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Fire.webp",
+    resilience: "./media/Misc/BuffDebuffs/Ice.webp"
+  },
+  {
+    name: "Dungeon",
+    description: "A torch-lit maze of stone walls, spike traps, and cursed relics. Hostile skeletons, necromancers, and armored knights dominate this level, demanding both quick reflexes and careful pathing.",
+    img: "./media/Backgrounds/Worlds/World2.1.gif",
+    audio: "./media/Audio/DungeonTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Electricity.webp",
+    resilience: "./media/Misc/BuffDebuffs/Poison.webp"
+  },
+  {
+    name: "Grave",
+    description: "A hidden, fog-covered graveyard where spirits rise and bones never rest. Undead enemies like ghosts, zombies, and spectral casters emerge from tombstones to trap and overwhelm the unprepared.",
+    img: "./media/Backgrounds/Worlds/World2.2.gif",
+    audio: "./media/Audio/GraveTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Electricity.webp",
+    resilience: "./media/Misc/BuffDebuffs/Fire.webp"
+  },
+  {
+    name: "Volcano",
+    description: "A blistering inferno of molten rock and cracked obsidian. Fire elementals, magma beasts, and explosive hazards make this zone brutal and chaotic, favoring quick damage and heat resistance.",
+    img: "./media/Backgrounds/Worlds/World3.1.gif",
+    audio: "./media/Audio/VolcanoTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Ice.webp",
+    resilience: "./media/Misc/BuffDebuffs/Fire.webp"
+  },
+  {
+    name: "Neo Isle",
+    description: "A sleek island base filled with steel corridors, laser traps, and robot pirates. Enemies are fast, armed with tech weapons, and often travel in synced formations for maximum damage.",
+    img: "./media/Backgrounds/Worlds/World3.2.gif",
+    audio: "./media/Audio/NeoIsleTheme.mp3",
+    weakness: "./media/Misc/BuffDebuffs/Poison.webp",
+    resilience: "./media/Misc/BuffDebuffs/Ice.webp"
+  }
+];
+
+
+const priorityEnemies = [
+  {
+    name: "Goblin Giant",
+    src: "./media/Misc/Enemies/1.1_Enemy.webp",
+    description: "A hulking forest brute with high HP and a slow but powerful melee attack."
+  },
+  {
+    name: "Yeti",
+    src: "./media/Misc/Enemies/1.2_Enemy.webp",
+    description: "A tough ice monster that can launch freezing projectiles and tank a lot of damage."
+  },
+  {
+    name: "BigSkeleton",
+    src: "./media/Misc/Enemies/2.1_Enemy.webp",
+    description: "A large skeletal warrior with high durability and aggressive melee behavior."
+  },
+  {
+    name: "Top Gun",
+    src: "./media/Misc/Enemies/2.2_Enemy.webp",
+    description: "A fast-firing enemy that uses ranged gun attacks, often overwhelming players with bullet spam."
+  },
+  {
+    name: "Flame Captain",
+    src: "./media/Misc/Enemies/3.1_Enemy.webp",
+    description: "An elite enemy with fire-based attacks, often summoning flame trails or explosions."
+  },
+  {
+    name: "Big Boy Type 3",
+    src: "./media/Misc/Enemies/3.2_Enemy.webp",
+    description: "A heavily-armored Iron Pirate unit with devastating area attacks and high resistance."
+  }
+];
+
+
+let worldsCurrent = 0;
+const worldsSlider = document.getElementById("worldImages");
+
+function nextWorld() {
+  worldsCurrent = (worldsCurrent + 1) % worldDescriptions.length;
+  worldsSlider.src = worldDescriptions[worldsCurrent].img;  
+  document.getElementById('worldName').innerHTML = worldDescriptions[worldsCurrent].name;
+}
+
+function previousWorld() {
+  worldsCurrent = (worldsCurrent - 1 + worldDescriptions.length) % worldDescriptions.length;
+  worldsSlider.src = worldDescriptions[worldsCurrent].img;  
+  document.getElementById('worldName').innerHTML = worldDescriptions[worldsCurrent].name;
+}
+
+function goToWorld(){
+  document.getElementById('exitWorldsScreenButton').style.display = 'block';
+  document.getElementById('worldShowcase').style.display = 'block';
+  document.getElementById('blackScreen').style.display = 'block';
+  getWorldData();
+  
+}
+function getWorldData(){
+  let worldIndex = worldsCurrent;
+  document.getElementById('worldShowcase').style.backgroundImage = `url(${worldDescriptions[worldIndex].img})`;
+  document.getElementById('descTitle').innerHTML = worldDescriptions[worldIndex].name;
+  document.getElementById('descInfo').innerHTML = worldDescriptions[worldIndex].description;
+  document.getElementById('enemyTitle').innerHTML = "Priority Enemy";
+  document.getElementById('enemyImg').src = priorityEnemies[worldIndex].src;
+
+}
+
+function exitWorld(){
+  document.getElementById('worldShowcase').style.display = 'none';
+  document.getElementById('exitWorldsScreenButton').style.display = 'none';
+  document.getElementById('blackScreen').style.display = 'none';
+  document.getElementById('keyboard').style.display = 'none';
+}
+
+let audio;
+
+
+
+let isAudioPlaying = false;
+
+function toggleAudio() {
+  if (isAudioPlaying) {
+  audio.pause();
+    audio.currentTime = 0;
+  document.getElementById('isPlaying').src = './media/Misc/pausedMusic.png';
+    isAudioPlaying = false;
+    document.getElementById('playPause').innerHTML = '△';
+  }
+  else {
+    audio = new Audio(worldDescriptions[worldsCurrent].audio);
+    audio.play();
+    document.getElementById('isPlaying').src = './media/Misc/musicIndicaitor.gif';
+    isAudioPlaying = true;
+    document.getElementById('playPause').innerHTML = '=';
+  }
+}
+
+function stopAllAudio() {
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+  metronome.pause();
+  metronome.currentTime = 0;
+}
+function openKeyboard() {
+  document.getElementById('exitWorldsScreenButton').style.display = 'block';
+  document.getElementById('keyboard').style.display = 'block';
+  document.getElementById('blackScreen').style.display = 'block';
+}
+
+const keys = ['d', 'r', 'f', 't', 'g', 'y', 'h', 'u', 'j'];
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key.toLowerCase();
+    const index = keys.indexOf(key);
+    if (index !== -1) {
+        playKey(index);
+    }
+});
+
+
+const keySoundmap = [
+    "./media/Piano Keys/keyD.mp3",
+    "./media/Piano Keys/keyR.mp3",
+    "./media/Piano Keys/keyF.mp3",
+    "./media/Piano Keys/keyT.mp3",
+    "./media/Piano Keys/keyG.mp3",
+    "./media/Piano Keys/keyY.mp3",
+    "./media/Piano Keys/keyH.mp3",
+    "./media/Piano Keys/keyU.mp3",
+    "./media/Piano Keys/keyJ.mp3",
+]
+
+function playKey(Chord){
+    const audio = new Audio(keySoundmap[Chord]);
+    audio.play();
+}
+
+let isPlaying = false;
+let metronome;
+let metronomeAnimationInterval = null;
+
+function toggleMetronomeSound(){
+
+    if (isPlaying) {
+        metronome.pause();
+        isPlaying = false;
+        animateMetronome(false);
+    } else {
+      const bpm = parseInt(document.getElementById('metronomeBpm').value) / 120;
+      console.log(bpm);
+        metronome = new Audio("./media/Misc/metronomeSound1.mp3");
+        metronome.loop = true;
+        metronome.play();
+        if (bpm <= 0){
+        metronome.playbackRate = 1; 
+        }else{
+        metronome.playbackRate = bpm; 
+        }
+        isPlaying = true;
+        animateMetronome(true);
+    }
+}
+
+function animateMetronome(isPlaying) {
+    const metronomeImage = document.getElementById('metronome');
+    if (isPlaying) {
+        let toggle = false;
+        metronomeAnimationInterval = setInterval(() => {
+            if (!isPlaying || metronome.paused) {
+                clearInterval(metronomeAnimationInterval);
+                metronomeAnimationInterval = null;
+                metronomeImage.src = './media/Misc/metronome.png';
+                return;
+            }
+            metronomeImage.src = toggle ? './media/Misc/metronome.png' : './media/Misc/metronome2.png';
+            toggle = !toggle;
+        }, 500);
+    } else {
+        if (metronomeAnimationInterval) {
+            clearInterval(metronomeAnimationInterval);
+            metronomeAnimationInterval = null;
+        }
+        metronomeImage.src = './media/Misc/metronome.png';
+    }
 }

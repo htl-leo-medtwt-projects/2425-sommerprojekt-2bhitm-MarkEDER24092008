@@ -8,6 +8,7 @@
 <body>
     <h1 id="title">Worlds</h1>
     <link rel="stylesheet" href="./generalStyle.css">
+    <link rel="stylesheet" href="./worldsStyle.css">
     <script src="./script.js" defer></script>
 
     <div id="menu">
@@ -16,6 +17,72 @@
         <a href="./worlds.html"><img id="menuImage" src="./media/Menu Icons/WorldsIcon.png" alt="Worlds"></a>
         <a href="./hallOfFame.html"><img id="menuImage" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>
     </div>
+
+
+
+<div id="worldsPreviewContainer">
+    <img class="slideButton" id="leftButton" onclick="previousWorld()" src="./media/Misc/leftButton.png" alt="Go Left">
+    <img id="worldImages" onclick="goToWorld()" src="./media/Backgrounds/Worlds/World1.1.gif">
+    <img class="slideButton" id="rightButton" onclick="nextWorld()" src="./media/Misc/rightButton.png" alt="Go Left">
+</div>
+    <h1 id="worldName">Forest</h1>
+
+    <div id="blackScreen"></div>
+    <div id="worldShowcase">
+        <div id="worldContainerDescription">
+            <h1 class="worldTitles" id="descTitle">World Title</h1>
+            <h3 id="descInfo">Description</h3>
+        </div>
+        <div id="enemyDescription">
+            <h1 class="worldTitles" id="enemyTitle"></h1>
+            <img id="enemyImg" src="media/Misc/Enemies/1.1_Enemy.webp" alt="Most Common Enemy" style="width: 100px; height: 100px;">
+        </div>
+
+        <div id="elementalStats">
+            <h2>Weakness</h2>
+            <h2>Resistance</h2>
+            <img src="./media/Misc/BuffDebuffs/Fire.webp" alt="Their Weakness" style="width: 100px; height: 100px;">
+            <img src="./media/Misc/BuffDebuffs/Poison.webp" alt="Their Weakness" style="width: 100px; height: 100px;">
+        </div>
+       
+            <div id="musicPanel">
+        <button class="audioButtons" onclick="toggleAudio()" id="playPause" style="rotate: 90deg;">△</button>
+        <img src="./media/Misc/pausedMusic.png" id="isPlaying" alt="Paused" style="width: 100px; height: 100px; margin-bottom: 50px;">
+    </div>
+    
+
+    </div>
+
+    <h2 id="keyboardDesc">If you are bored, go ahead and try producing a beat similar to the level songs!</h2>
+
+    <img src="./media/Misc/keyboardButton.png" onclick="openKeyboard()" id="soulBeatsButton" alt="SoulBeats" style="width: 100px; height: 80px;">
+    <div id="keyboard">
+        <div id="playingKeys">
+        <button class="playingKey" onclick="playKey(0)" style="background-color:  #ffffff;">D</button>
+        <button class="playingKey" onclick="playKey(2)" style="background-color: #ffffff;">F</button>
+        <button class="playingKey" onclick="playKey(4)" style="background-color: #ffffff;">G</button>
+        <button class="playingKey" onclick="playKey(6)" style="background-color: #ffffff;">H</button>
+        <button class="playingKey" onclick="playKey(0)" style="background-color: #ffffff;">J</button>
+    </div>
+
+    <div id="blackPlayingKeys">
+        <button class="blackPlayingKey" onclick="playKey(1)">R</button>
+        <button class="blackPlayingKey" onclick="playKey(3)">T</button>
+        <button class="blackPlayingKey" onclick="playKey(5)">Y</button>
+        <button class="blackPlayingKey" onclick="playKey(7)">U</button>
+    </div>
+
+    <input onchange="toggleMetronomeSound()" type="text" id="metronomeBpm" placeholder="bpm">
+    <img id="metronome" src="./media/Misc/metronome.png" style="width: 100px; height: 100px;">
+
+    </div>
+    
+
+    <button onclick="exitWorld(), stopAllAudio()" id="exitWorldsScreenButton">X</button>
+
+
+
+
     
 </body>
 </html>

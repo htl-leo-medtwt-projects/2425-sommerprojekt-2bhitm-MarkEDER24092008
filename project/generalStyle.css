@@ -110,3 +110,26 @@ body{
     }
     
 }
+
+#worldShowcase{
+    background-color: red;
+    position: fixed;
+    top: 15%;
+    bottom: 15%;
+    left: 15%;
+    right: 15%;
+    z-index: 1000;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
+}
+
+button{
+    transition: box-shadow 0.5s, background-color 0.3s;
+  }
+
+
+  button:hover{
+    box-shadow: 5px 5px 10px rgb(56, 14, 14);
+    background-color: darkred;
+  }

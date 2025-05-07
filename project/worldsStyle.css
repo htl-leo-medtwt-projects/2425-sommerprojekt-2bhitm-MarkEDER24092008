@@ -1,0 +1,292 @@
+
+:root{
+    --text: rgb(200, 175, 175);
+    --text2: rgb(66, 28, 28);
+    --box-background: rgb(77, 66, 66);
+    --box-shadow: rgb(84, 48, 48);
+}
+
+.slideButton{
+    width: 50px;
+    height: 130px;
+    transition: transform 0.5s;
+    padding: 2px;
+}
+
+.slideButton:hover{
+    transform: scale(1.1);
+}
+
+@font-face {
+    font-family: "nameFont";
+    src: url(./media/Fonts/Bankai\ Demo\ Version.otf);
+}
+
+#worldName{
+    font-size: 200px;
+    font-weight: bolder;
+    font-family: nameFont;
+    position: absolute;
+    top: 18%;
+    right: 12%;
+    transition: text-shadow 0.5s, transform 0.6s;
+}
+
+#worldName:hover{
+    text-shadow: 10px 10px 10px black;
+    transform: scale(1.1);
+}
+
+#worldsPreviewContainer{
+    margin-left: 2%;
+    margin-right: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    border-radius: 10%;
+    background-color: var(--box-background);
+    padding: 10px;
+}
+
+#worldImages{
+    width: 450px;
+    height: 250px;
+    border-radius: 40%;
+    transition: box-shadow 1s  , transform 0.5s;
+}
+#worldImages:hover{
+    box-shadow: 10px 10px 20px black;
+    transform: scale(1.06);
+    animation-name: worldImages;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes worldImages{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.05);}
+    100%{transform: scale(1);}
+}
+
+
+#exitWorldsScreenButton{
+    position: fixed;
+    transform: scale(3);
+    border-radius: 20%;
+    font-weight: bolder;
+    top: 10%;
+    right: 10%;
+    background-color: var(--box-background);
+    z-index: 1500;
+    display: none;
+}
+
+#worldShowcase{
+    background-image: url(./media/Backgrounds/Worlds/World1.1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+
+
+.worldTitles{
+    font-family: nameFont;
+}
+
+#blackScreen{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 999;
+    display: none;
+}
+
+#worldContainerDescription{
+    position: relative;
+    top: 2%;
+    left: 2%;
+    background-color: var(--box-background);
+    border-radius: 10%;
+    width:600px;
+    padding: 5%;
+}
+
+#enemyDescription{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    background-color: var(--box-background);
+    border-radius: 10%;
+    width:min-content;
+    padding: 5%;
+}
+
+#buttonMap{
+    display: flex;
+    flex-direction: row;
+    justify-content:baseline;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+
+#musicPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+
+.audioButtons{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.5s;
+    padding: 2px;
+    background-color: var(--box-background);
+    border-radius: 10%;
+}
+.audioButtons:hover{
+    transform: scale(1.1);
+}
+
+
+#soulBeatsButton{
+    animation: soulBeats 3s infinite alternate-reverse;
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+}
+
+@keyframes soulBeats{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(5deg);}
+    100%{transform: rotate(-5deg);}
+}
+
+#keyboardDesc{
+    position: absolute;
+    bottom: 12%;
+    left: 20%;
+    background-color: var(--box-background);
+    border-radius: 5%;
+    width: 400px;
+    padding: 1%;
+}
+
+#keyboard{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 10%;
+    height: 10%;
+    
+    transform: scale(0.8);
+    width: 80%;
+    height: 80%;
+    background-color: rgb(138, 118, 118);
+    display: none; 
+    z-index: 1000;
+    border-radius: 10%;
+    
+}
+
+#playingKeys{
+    position: relative;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.playingKey{
+    user-select: none;
+   width: 20%;
+   border-radius: 8%;
+   
+}
+
+.playingKey:hover{
+    background-color: white;
+    box-shadow: 1px 20px 15px black;
+    animation: keys 1s infinite alternate;
+}
+@keyframes keys {
+    0%{box-shadow: 1px 20px 15px black;}
+    25%{box-shadow: 2px 25px 20px rgb(196, 255, 171);}
+    50%{box-shadow: 4px 30px 20px rgb(81, 21, 21);}
+    75%{box-shadow: 2px 25px 20px rgb(224, 194, 65);}
+    100%{box-shadow: 1px 15px 10px rgb(42, 104, 117);}
+}
+
+#blackPlayingKeys{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    width: 80%;
+    height: 230px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.blackPlayingKey{
+    user-select: none;
+    border-radius: 10%;
+    width: 15%;
+    margin: 0 2%;
+    background-color:  #1A1A1D;
+}
+.blackPlayingKey:hover{
+    background-color: rgb(63, 63, 63);
+    box-shadow: 1px 20px 15px black;
+}
+
+#metronome{
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+}
+#metronomeBpm{
+    position: absolute;
+    width: 80px;
+    right: 0;
+    bottom: 20%;
+}
+
+#elementalStats{
+    background-color: var(--box-background);
+    border-radius: 10%;
+    padding: 10px;
+    width: max-content;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+}
+#elementalStats img{
+    margin-left: auto;
+    margin-right: auto;
+}
