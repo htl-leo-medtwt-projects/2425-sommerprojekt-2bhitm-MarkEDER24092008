@@ -290,3 +290,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+#changePiano{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    background-color: var(--box-background);
+    border-radius: 10%;
+    padding: 10px;
+    width: max-content;
+}

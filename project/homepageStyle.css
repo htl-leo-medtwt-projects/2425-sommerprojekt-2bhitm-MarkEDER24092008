@@ -31,6 +31,7 @@ body{
     
 }
 
+
 /*INFOBOXES & Co.*/
 .navButtons{
     /*Positioning*/
@@ -42,7 +43,7 @@ body{
     width: 3%;
     padding: 25px;
     transition: transform 0.2s, box-shadow 0.5s, color 0.5s; 
-    animation: navButtonsNoHover 2s infinite alternate-reverse;
+    animation: CHANGEIFNEEDED 2s infinite alternate-reverse;
     animation-delay: none;   
 }
 
@@ -158,63 +159,69 @@ body{
     height: auto;
 }
 
-
-/*Quiz*/
-
-#quizStart{
-    display: block;
-     /*Positioning*/
-     position: absolute;
-    
-     top: 400%;
-     left: 20%;
-     
-     right: 20%;
-     text-align: center;
-     /*Sizing/Styling*/
-     width: auto;
-     height: auto;
-     background-color: var(--box-background);
-     border-radius: 2%;
-     padding: 30px;
-}
-
-#quiz{
-    display: none;
-    /*Positioning*/
-    position: absolute;
-    
-    top: 400%;
-    left: 20%;
-    right: 20%;
+#gashaponContainer{
     text-align: center;
-    /*Sizing/Styling*/
-    width: auto;
-    height: auto;
+    align-items: center;
+    /*Positioning*/
+   
+    width: max-content;
     background-color: var(--box-background);
     border-radius: 2%;
-    padding: 30px;
+    margin-top: 230%;
+    margin-left: 20%;
+    margin-right: 20%;
+    z-index: 10;
 }
 
-
-/*More*/
-
-#quizResults{
-    display: block;
-    /*Positioning*/
-    position: absolute;
-    
-    right: 10%;
-    top: 5%;
-    text-align: center;
-    /*Sizing/Styling*/
-    width: auto;
-    height: auto;
-    background-color: var(--box-background);
-    border-radius: 2%;
-    padding: 20px;
+#gashaponMachine{
+    animation: gashaponMachine 1s 1 alternate;
 }
 
-#quizInfo{
+@keyframes gashaponMachine {
+    0%{transform: translateY(5px);}
+    100%{transform: translateY(-5px);}
+}
+
+@keyframes shake {
+    0%{transform: rotate(0deg);}
+    15%{transform: rotate(5deg);}
+    50%{transform: rotate(-5deg);}
+    75%{transform: rotate(5deg);}
+    100%{transform: rotate(0deg);}
+}
+
+#gashaponCooldownBox{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.479);
+    width: 102px;
+    height: 182px;
+    margin-top: -13%;
+    margin-left: 41%;
+    margin-right: auto;
+    z-index: 2000;
     display: none;
+    animation: shake 1s 1 alternate;
+}
+
+#egg{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: 44%;
+    top: -45px;
+    right: auto;
+    animation: egg 1s 1 alternate;
+    z-index: 3000;
+    display: none;
+}
+
+@keyframes dropEgg {
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(30px);}
+   
+}
+
+@keyframes egg {
+    0%{transform: translateY(5px);}
+    100%{transform: translateY(-5px);}
 }

@@ -3,6 +3,28 @@
 //***********************
 
 
+/*
+const { animate } = anime;
+
+animate('.square', { x: '17rem' });
+
+animate('.navButtons', {
+  // Property keyframes
+  y: [
+    { to: '-1.75rem', ease: 'outExpo', duration: 600 },
+    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+  ],
+  // Property specific parameters
+  rotate: {
+    from: '-1turn',
+    delay: 0
+  },
+  delay: (_, i) => i * 50, // Function based value
+  ease: 'inOutCirc',
+  loopDelay: 1000,
+  loop: true
+});
+*/
 
 function scrollToInfo() {
     window.scrollBy({ top: 110 * 8, behavior: 'smooth' }); 
@@ -20,65 +42,60 @@ function scrollToTop(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function startTest(){
-    document.getElementById('menu').style.display = 'none';
+
+let amountsClicked = 0;
+function machineClicked(){
+  amountsClicked++;
+  console.log(amountsClicked);
+
+  if(amountsClicked >= 1){
+    document.getElementById('gashaponMachine').style.animationName = 'shake';
+    document.getElementById('gashaponCooldownBox').style.display = 'block';
+    document.getElementById('egg').style.display = 'block';
+    document.getElementById('egg').style.animationName = 'dropEgg';
+
+  amountsClicked = 0;
+  console.log("Animation started");
+  setTimeout(() => {
+    document.getElementById('gashaponMachine').style.animationName = 'gashaponMachine';
+    document.getElementById('gashaponCooldownBox').style.display = 'none';
+    document.getElementById('egg').style.animationName = 'egg';
+    document.getElementById('egg').style.display = 'none';
+
+
+  }, 3000);
+}
 }
 
+let cheat = [
+  {desc:"DA SECRETTT"}
+]
 
-//********************* 
-//********Quiz*********
-//********************* 
+let prizePool = [
+  {desc:"DA SECRETTT"},
+  {desc:"A Message; 'Your'e bad at this'"},
+  {desc:"Nothing... Once again"},
+  {desc:"Some Advice: 'Don't Gamble'"},
+  {desc:"A good look in the mirror"},
+  {desc:"A new Achievement: 'Unlucky Dog'"},
+  {desc:"Nothing"}
+]
 
-function startQuiz() {
-    document.getElementById('quizInfo').style.display = 'block';
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('quizRemainder').style.display = 'none';
-    document.getElementById('body').style.overflowY = 'hidden';
-    document.getElementById('quiz').style.display = 'block';
-    document.getElementById('quiz').style.top = '350%';
-    document.getElementById('quizStart').style.display = 'none';
- }
+function crackEgg(){
+  let randomWin = Math.floor(Math.random() * cheat.length);
+  document.getElementById('egg').style.display = 'none';
+  alert("You got - " + cheat[randomWin].desc);
+  //CHANGE TO cheat FOR DEMONSTRATION
 
-
-function nextSlide(current) {
-    document.getElementById(`slide${current}`).style.display = "none";
-    const next = document.getElementById(`slide${current + 1}`);
-    if (next) next.style.display = "block";
+  if(prizePool[randomWin].desc == cheat[0].desc){
+    let audio = new Audio("./media/Audio/winSfx.mp3");
+    audio.play();
+  const secretSiteImg = document.getElementById('secretSite');
+  secretSiteImg.parentElement.innerHTML = `<a href="./hallOfFame.html"><img class="menuImage" id="secretSite" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>`;
+  console.log(secretSiteImg.parentElement);
+  }
 }
 
-
-function showResults(event) {
-    event.preventDefault();
-    evaluateQuiz();
-    return false;
-}
-
-//ÜBERPRÜFEN
-
-function evaluateQuiz() {
-    const correctAnswers = {
-        q1: "b",
-        q2: "b",
-        q3: "a",
-        q4: "b",
-        q5: "c"
-    };
-
-    let score = 0;
-    let total = Object.keys(correctAnswers).length;
-
-    for (let key in correctAnswers) {
-        const selected = document.querySelector(`input[name="${key}"]:checked`);
-        if (selected && selected.value === correctAnswers[key]) {
-            score++;
-        }
-    }
-
-    // Quiz ausblenden und Resultat anzeigen
-    document.getElementById("quiz").style.display = "none";
-    document.getElementById("quizRemainder").style.display = "block";
-    document.getElementById("quizResults").innerHTML = `${score}/ 5 correct`;
-}
 
 
 //********************* 
@@ -539,22 +556,55 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-const keySoundmap = [
-    "./media/Piano Keys/keyD.mp3",
-    "./media/Piano Keys/keyR.mp3",
-    "./media/Piano Keys/keyF.mp3",
-    "./media/Piano Keys/keyT.mp3",
-    "./media/Piano Keys/keyG.mp3",
-    "./media/Piano Keys/keyY.mp3",
-    "./media/Piano Keys/keyH.mp3",
-    "./media/Piano Keys/keyU.mp3",
-    "./media/Piano Keys/keyJ.mp3",
+const classicKeySoundmap = [
+  "./media/Piano Keys/keyD.mp3",
+  "./media/Piano Keys/keyR.mp3",
+  "./media/Piano Keys/keyF.mp3",
+  "./media/Piano Keys/keyT.mp3",
+  "./media/Piano Keys/keyG.mp3",
+  "./media/Piano Keys/keyY.mp3",
+  "./media/Piano Keys/keyH.mp3",
+  "./media/Piano Keys/keyU.mp3",
+  "./media/Piano Keys/keyJ.mp3",
 ]
 
+const electricKeySoundmap = [
+    "./media/Piano Keys/keyD1.mp3",
+    "./media/Piano Keys/keyR1.mp3",
+    "./media/Piano Keys/keyF1.mp3",
+    "./media/Piano Keys/keyT1.mp3",
+    "./media/Piano Keys/keyG1.mp3",
+    "./media/Piano Keys/keyY1.mp3",
+    "./media/Piano Keys/keyH1.mp3",
+    "./media/Piano Keys/keyU1.mp3",
+    "./media/Piano Keys/keyJ1.mp3",
+]
+
+let choice = true;
+let pianoType;
+
+
+function changePianoType() {
+    if (choice == true) {
+      choice = false;
+      pianoType = classicKeySoundmap;
+    } else if (choice == false) {
+      pianoType = electricKeySoundmap;
+      choice = true;
+    }
+}
+
+let pianoChoice = "classic";
 function playKey(Chord){
-    const audio = new Audio(keySoundmap[Chord]);
+  let audio = new Audio(pianoType[Chord]);
     audio.play();
 }
+
+//*********************
+//*****METRONOME*******
+//*********************
+
+
 
 let isPlaying = false;
 let metronome;
@@ -569,7 +619,7 @@ function toggleMetronomeSound(){
     } else {
       const bpm = parseInt(document.getElementById('metronomeBpm').value) / 120;
       console.log(bpm);
-        metronome = new Audio("./media/Misc/metronomeSound1.mp3");
+        metronome = new Audio("./media/Misc/metronomeSound2.mp3");
         metronome.loop = true;
         metronome.play();
         if (bpm <= 0){
@@ -582,7 +632,11 @@ function toggleMetronomeSound(){
     }
 }
 
+let metronomeAnimationSpeed = 500;
+
 function animateMetronome(isPlaying) {
+  const bpm = parseInt(document.getElementById('metronomeBpm').value);
+  metronomeAnimationSpeed = 60000 / bpm;
     const metronomeImage = document.getElementById('metronome');
     if (isPlaying) {
         let toggle = false;
@@ -595,7 +649,7 @@ function animateMetronome(isPlaying) {
             }
             metronomeImage.src = toggle ? './media/Misc/metronome.png' : './media/Misc/metronome2.png';
             toggle = !toggle;
-        }, 500);
+        }, metronomeAnimationSpeed);
     } else {
         if (metronomeAnimationInterval) {
             clearInterval(metronomeAnimationInterval);
@@ -604,3 +658,131 @@ function animateMetronome(isPlaying) {
         metronomeImage.src = './media/Misc/metronome.png';
     }
 }
+
+//**************************** 
+//*******HALL OF SKINS********
+//****************************
+
+const fameSkins = [
+  {
+    name: "Ming Xiao",
+    cardSrc: "./media/Figures/HallOfSkins/Card/MingXiao.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/MingXiao.webp",
+    skinClass: "War Of Warlords",
+    description: "Adorned in imperial armor with dragon-themed embellishments, exuding authority and power.",
+    effects: "Idle animation includes the riding of a chinese dragon, gaining height as he stands. "
+  },
+  {
+    name: "Capricorn",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Capricornus.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Capricornus.webp",
+    skinClass: "Tears Of Time",
+    description: "Celestial armor with star motifs, giving the character a mystical, cosmic presence.",
+    effects: "Projectile attacks sparkle with shimmering stardust trails."
+  },
+  {
+    name: "Gemini",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Gemini.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Gemini.webp",
+    skinClass: "Tears Of Time",
+    description: "Mirrored design with harmonious aesthetics, embodying the concept of duality.",
+    effects: "He posesses a dual personality, with one side being more aggressive and the other more defensive. Enough kills makes him switch..."
+  },
+  {
+    name: "Abo",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Abo.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Abo.webp",
+    skinClass: "Robotic Frenzy",
+    description: "Abo becomes a sleek android with glowing cybernetic elements and metallic finish.",
+    effects: "He plugs up when idle, charging up his battery. His attacks have a 'shocking' effect, with sparks flying around."
+  },
+  {
+    name: "Crux",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Crux.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Crux.webp",
+    skinClass: "Robotic Frenzy",
+    description: "High-speed robotic design with agile limbs and advanced optics.",
+    effects: "He leaves codes of the matrix scattered in the air as he attacks or uses his stealth."
+  },
+  {
+    name: "Sagittarus",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Sagittarus.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Sagittarus.webp",
+    skinClass: "Tears Of Time",
+    description: "Constellation-themed archer with armor that glows like a galaxy.",
+    effects: "Using her divine protection of the Cosmos as she casts attacks, she leaves a trail of stars behind her."
+  },
+  {
+    name: "Yuan-Lan",
+    cardSrc: "./media/Figures/HallOfSkins/Card/YuanLan.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/YuanLan.webp",
+    skinClass: "War Of Warlords",
+    description: "Clad in ceremonial war robes with ornate detailing, embodying noble discipline.",
+    effects: "Summoning the dragons of the elements as he uses his abilities, he leaves a trail of dragon scales behind him."
+  },
+  {
+    name: "Justice Bringer",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Justicebringer.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Justicebringer.webp",
+    skinClass: "Robotic Frenzy",
+    description: "Heavy-armored law enforcement mech with a commanding presence.",
+    effects: "His imposing stand while resting, along with his video game-like animations, make it feel like your'e playing a boss."
+  },
+  {
+    name: "Sun-Shangxiang",
+    cardSrc: "./media/Figures/HallOfSkins/Card/SunShangxiang.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/SunShangxiang.webp",
+    skinClass: "War Of Warlords",
+    description: "Stylish and agile warrior princess, dressed in elegant combat attire.",
+    effects: "Leaving a trail of divine fire everywhere she strikes, her effects represent the Sun Goddes."
+  },
+  {
+    name: "Unit-1202",
+    cardSrc: "./media/Figures/HallOfSkins/Card/Unit1202.webp",
+    iconSrc: "./media/Figures/HallOfSkins/charIcons/Unit1202.webp",
+    skinClass: "Robotic Frenzy",
+    description: "Advanced tactical droid with high-tech armor and integrated weaponry.",
+    effects: "Using his Cyberpunk tech to flatline his enemies, he has the newest effect implants installed."
+  }
+];
+
+
+
+generateSkinMenu();
+
+function generateSkinMenu(){
+  for(let i = 0; i < fameSkins.length; i++){
+    document.getElementById('skinMenu').innerHTML += `
+    <div onclick="showSkinShowcasing(${i})" class="skinCard">
+      <img  src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
+    </div>
+    `;
+  }
+
+}
+
+function showSkinShowcasing(index){
+  document.getElementById('blackScreen').style.display = 'block';
+  document.getElementById('exitSkinShowcasing').style.display = 'block';
+  document.getElementById('skinShowcase').style.display = 'block';
+  generateSkinData(index);
+
+}
+
+function generateSkinData(index){
+  document.getElementById('skinShowcase').innerHTML 
+  = `<h1 id="skinName">${fameSkins[index].name}</h1>
+        <img id="skinIcon" src="${fameSkins[index].iconSrc}" alt="Skin Icon">
+        <img id="skinImage" src="${fameSkins[index].cardSrc}" alt="Skin Image">
+        <div id="skinDescription">
+            <h2 id="skinDescriptionTitle">Description</h2>
+            <p id="skinDescriptionText">${fameSkins[index].description}</p>
+            <h2 id="skinEffectTitle">Sp. Effects</h2>
+            <p id="skinEffectText">${fameSkins[index].effects}</p>`;
+}
+
+function exitSkinShowcasing(){
+  document.getElementById('blackScreen').style.display = 'none';
+  document.getElementById('exitSkinShowcasing').style.display = 'none';
+  document.getElementById('skinShowcase').style.display = 'none';
+} 

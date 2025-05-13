@@ -9,14 +9,28 @@
 <body>
     <h1 id="title">Hall Of Skins</h1>
     <link rel="stylesheet" href="./generalStyle.css">
+    <link rel="stylesheet" href="./hallOfFameStyle.css">
     <script src="./script.js" defer></script>
 
+
     <div id="menu">
-        <a href="./homepage.html"><img id="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
-        <a href="./characters.html"><img id="menuImage" src="./media/Menu Icons/CharacterButton.png" alt="Characters"></a>
-        <a href="./worlds.html"><img id="menuImage" src="./media/Menu Icons/WorldsIcon.png" alt="Worlds"></a>
-        <a href="./hallOfFame.html"><img id="menuImage" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>
+        <a href="./homepage.html"><img class="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
+        <a href="./characters.html"><img class="menuImage" src="./media/Menu Icons/CharacterButton.png" alt="Characters"></a>
+        <a href="./worlds.html"><img class="menuImage" src="./media/Menu Icons/WorldsIcon.png" alt="Worlds"></a>
+        <a href="./hallOfFame.html"><img class="menuImage" id="secretSite" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>
+        </div>
+
+  
+    
+    <div id="skinMenu"></div>
+
+    <div id="blackScreen"></div>
+
+    <div id="skinShowcase">
     </div>
+
+    <button onclick="exitSkinShowcasing()" class="exitButton" id="exitSkinShowcasing">X</button>
+
 
 
 </body>

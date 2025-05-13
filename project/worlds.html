@@ -12,11 +12,11 @@
     <script src="./script.js" defer></script>
 
     <div id="menu">
-        <a href="./homepage.html"><img id="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
-        <a href="./characters.html"><img id="menuImage" src="./media/Menu Icons/CharacterButton.png" alt="Characters"></a>
-        <a href="./worlds.html"><img id="menuImage" src="./media/Menu Icons/WorldsIcon.png" alt="Worlds"></a>
-        <a href="./hallOfFame.html"><img id="menuImage" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>
-    </div>
+        <a href="./homepage.html"><img class="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
+        <a href="./characters.html"><img class="menuImage" src="./media/Menu Icons/CharacterButton.png" alt="Characters"></a>
+        <a href="./worlds.html"><img class="menuImage" src="./media/Menu Icons/WorldsIcon.png" alt="Worlds"></a>
+        <a><img class="menuImage" id="secretSite" src="./media/Menu Icons/lockedIcon.png" alt="Hall Of Fame"></a>
+        </div>
 
 
 
@@ -74,8 +74,10 @@
 
     <input onchange="toggleMetronomeSound()" type="text" id="metronomeBpm" placeholder="bpm">
     <img id="metronome" src="./media/Misc/metronome.png" style="width: 100px; height: 100px;">
-
+    <button id="changePiano" onclick="changePianoType()">Switch</button>
     </div>
+
+   
     
 
     <button onclick="exitWorld(), stopAllAudio()" id="exitWorldsScreenButton">X</button>
