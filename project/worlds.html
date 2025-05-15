@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soul Knight!</title>
-</head>
-<body>
-    <h1 id="title">Worlds</h1>
+
     <link rel="stylesheet" href="./generalStyle.css">
     <link rel="stylesheet" href="./worldsStyle.css">
     <script src="./script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./media/Misc/favIcon2.webp">
+
+</head>
+<body>
+    <h1 id="title">Worlds</h1>
+
+    
 
     <div id="menu">
         <a href="./homepage.html"><img class="menuImage" src="./media/Menu Icons/HomeIcon.png" alt="Home"></a>
@@ -72,12 +77,13 @@
         <button class="blackPlayingKey" onclick="playKey(7)">U</button>
     </div>
 
-    <input onchange="toggleMetronomeSound()" type="text" id="metronomeBpm" placeholder="bpm">
+    <!-- <input onchange="toggleMetronomeSound()" type="text" id="metronomeBpm" placeholder="bpm"> -->
+    <input oninput="toggleMetronomeSound()" class="rangerStyle" type="range" min="10" max="1000" id="metronomeBpm" placeholder="bpm">
     <img id="metronome" src="./media/Misc/metronome.png" style="width: 100px; height: 100px;">
     <button id="changePiano" onclick="changePianoType()">Switch</button>
     </div>
 
-   
+
     
 
     <button onclick="exitWorld(), stopAllAudio()" id="exitWorldsScreenButton">X</button>

@@ -663,6 +663,157 @@ function animateMetronome(isPlaying) {
 //*******HALL OF SKINS********
 //****************************
 
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.to('#card1', {
+    scrollTrigger:{
+      trigger: '#card1',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: 40,
+    opacity: 1,
+    duration: 1
+  })
+
+
+  gsap.to('#card2', {
+    scrollTrigger:{
+      trigger: '#card2',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: -40,
+    opacity: 1,
+    duration: 1
+  })
+
+
+  gsap.to('#card3', {
+    scrollTrigger:{
+      trigger: '#card3',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: 40,
+    opacity: 1,
+    duration: 1
+  })
+
+
+  gsap.to('#card4', {
+    scrollTrigger:{
+      trigger: '#card4',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: -40,
+    opacity: 1,
+    duration: 1
+  })
+
+
+  gsap.to('#card5', {
+    scrollTrigger:{
+      trigger: '#card5',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: 40,
+    opacity: 1,
+    duration: 1
+  })
+
+  gsap.to('#card6', {
+    scrollTrigger:{
+      trigger: '#card6',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: -40,
+    opacity: 1,
+    duration: 1
+  })
+
+  gsap.to('#card7', {
+    scrollTrigger:{
+      trigger: '#card7',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: 40,
+    opacity: 1,
+    duration: 1
+  })
+
+  gsap.to('#card8', {
+    scrollTrigger:{
+      trigger: '#card8',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: -40,
+    opacity: 1,
+    duration: 1
+  })
+
+  gsap.to('#card9', {
+    scrollTrigger:{
+      trigger: '#card9',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: 40,
+    opacity: 1,
+    duration: 1
+  })
+
+  gsap.to('#card10', {
+    scrollTrigger:{
+      trigger: '#card10',
+      start: "top 80%",
+      end: "bottom 80%",
+      markers: true,
+      triggerActions: 'restart pause resume none',
+      scrub: true
+    },
+    x: -40,
+    opacity: 1,
+    duration: 1
+  })
+
+ });
+
+
 const fameSkins = [
   {
     name: "Ming Xiao",
@@ -753,27 +904,28 @@ generateSkinMenu();
 function generateSkinMenu(){
   for(let i = 0; i < fameSkins.length; i++){
     document.getElementById('skinMenu').innerHTML += `
-    <div onclick="showSkinShowcasing(${i})" class="skinCard">
+    <div id=card${i + 1} onclick="showSkinShowcasing(${i})" class="skinCard">
       <img  src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
     </div>
     `;
   }
-
 }
 
+
+
 function showSkinShowcasing(index){
+  generateSkinData(index);
   document.getElementById('blackScreen').style.display = 'block';
   document.getElementById('exitSkinShowcasing').style.display = 'block';
   document.getElementById('skinShowcase').style.display = 'block';
-  generateSkinData(index);
-
+  document.body.style.overflowY = 'hidden';
 }
 
 function generateSkinData(index){
   document.getElementById('skinShowcase').innerHTML 
   = `<h1 id="skinName">${fameSkins[index].name}</h1>
         <img id="skinIcon" src="${fameSkins[index].iconSrc}" alt="Skin Icon">
-        <img id="skinImage" src="${fameSkins[index].cardSrc}" alt="Skin Image">
+        <img id="skinImage" src="${fameSkins[index].cardSrc}" alt="Skin Image" style="width:400px; height:"300px"/>
         <div id="skinDescription">
             <h2 id="skinDescriptionTitle">Description</h2>
             <p id="skinDescriptionText">${fameSkins[index].description}</p>
@@ -785,4 +937,5 @@ function exitSkinShowcasing(){
   document.getElementById('blackScreen').style.display = 'none';
   document.getElementById('exitSkinShowcasing').style.display = 'none';
   document.getElementById('skinShowcase').style.display = 'none';
+  document.body.style.overflowY = 'visible';
 } 

@@ -154,6 +154,6 @@ button{
     top: 10%;
     right: 10%;
     background-color: var(--box-background);
-    z-index: 1500;
+    z-index: 19000;
     display: none;
 }
