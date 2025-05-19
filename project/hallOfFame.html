@@ -15,6 +15,29 @@
 <body>
     <h1 id="title">Hall Of Skins</h1>
 
+    <div id="navigateSkins">
+        <nav id="skinNavBar">
+            <div class="nav-categories">
+              <button onclick="filterSkins('Robotic Frenzy')" class="nav-option" data-category="robots">Robotic Frenzy</button>
+              <button onclick="filterSkins('Call of Stars')" class="nav-option" data-category="cosmic">Call of Stars</button>
+              <button onclick="filterSkins('War of Warlords')" class="nav-option" data-category="warlords">War of Warlords</button>
+            </div>
+          
+            <div class="nav-search">
+              <input type="text" id="skinSearch" placeholder="Search skin name..." />
+            </div>
+          
+            <div class="nav-favorite">
+              <label>
+                <input type="checkbox" id="favFilter" />
+                Show Favorites
+              </label>
+            </div>
+            <img id="resetNavigation" onclick="resetNavigation()" src="./media/Misc/resetButton.png" alt="Reset Settings" style="width: 50px; height: 50px; cursor: pointer;">
+          </nav>
+          
+    </div>
+
 
 
     <div id="menu">
@@ -24,16 +47,31 @@
         <a href="./hallOfFame.html"><img class="menuImage" id="secretSite" src="./media/Menu Icons/HallOfFameIcon.png" alt="Hall Of Fame"></a>
         </div>
 
-  
-    
+
+        <button onmouseenter="showPixelArtInfo()" onmouseleave="removePixelArtInfo()" id="pixelArtButton" onclick="showDrawingSection()"><h1>Pixel Art!</h1></button>
+        <div id="pixelArt" style="display: none;">
+            <div id="pixelArtTools">
+                <img onclick="fillScreen()" class="toolChoices" src="./media/Misc/paintBucket.png" alt="Paint Bucket">
+                <img onclick="clearScreen()" class="toolChoices" src="./media/Misc/trashCan.png" alt="Paint Bucket">
+            </div>
+        <div id="pixelArtScreen"></div>
+        <div id="colorMenu">
+        <input oninput="pickCustomColor(this.value)" class="colorChoices" type="color" name="" id="colorPicker">
+            <div onclick="pickColor(128, 45, 40)" class="colorChoices" style=" background-color: rgb(128, 45, 40);"></div>
+            <div onclick="pickColor(45, 69, 67)" class="colorChoices" style=" background-color: rgb(45, 69, 67);"></div>   
+            <div onclick="pickColor(161, 247, 187)" class="colorChoices" style="background-color: rgb(161, 247, 187);"></div>   
+            <div onclick="pickColor(17, 46, 79)" class="colorChoices" style=" background-color: rgb(17, 46, 79);"></div>
+            <div onclick="pickColor(17, 0, 23)" class="colorChoices" style=" background-color: rgb(17, 0, 23);"></div>
+
+        </div>
+    </div>
+        
     <div id="skinMenu"></div>
 
     <div id="blackScreen"></div>
 
     <div id="skinShowcase">
     </div>
-
-    <button onclick="exitSkinShowcasing()" class="exitButton" id="exitSkinShowcasing">X</button>
 
 
 

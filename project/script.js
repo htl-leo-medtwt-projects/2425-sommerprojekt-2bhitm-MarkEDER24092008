@@ -664,154 +664,145 @@ function animateMetronome(isPlaying) {
 //****************************
 
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger)
 
-  gsap.to('#card1', {
-    scrollTrigger:{
-      trigger: '#card1',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: 40,
-    opacity: 1,
-    duration: 1
-  })
+function animateGsapCards(){
+  document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('#card1', {
+      scrollTrigger:{
+        trigger: '#card1',
+        start: "top 80%",
+        end: "bottom 80%",
+       // markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: 40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card2', {
+      scrollTrigger:{
+        trigger: '#card2',
+        start: "top 80%",
+        end: "bottom 80%",
+       // markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: -40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card3', {
+      scrollTrigger:{
+        trigger: '#card3',
+        start: "top 80%",
+        end: "bottom 80%",
+        //markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: 40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card4', {
+      scrollTrigger:{
+        trigger: '#card4',
+        start: "top 80%",
+        end: "bottom 80%",
+       //markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: -40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card5', {
+      scrollTrigger:{
+        trigger: '#card5',
+        start: "top 80%",
+        end: "bottom 80%",
+        //markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: 40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card6', {
+      scrollTrigger:{
+        trigger: '#card6',
+        start: "top 80%",
+        end: "bottom 80%",
+       // markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: -40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card7', {
+      scrollTrigger:{
+        trigger: '#card7',
+        start: "top 80%",
+        end: "bottom 80%",
+       // markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: 40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card8', {
+      scrollTrigger:{
+        trigger: '#card8',
+        start: "top 80%",
+        end: "bottom 80%",
+       // markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: -40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card9', {
+      scrollTrigger:{
+        trigger: '#card9',
+        start: "top 80%",
+        end: "bottom 80%",
+        //markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: 40,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to('#card10', {
+      scrollTrigger:{
+        trigger: '#card10',
+        start: "top 80%",
+        end: "bottom 80%",
+        //markers: true,
+        triggerActions: 'restart pause resume none',
+        scrub: true
+      },
+      x: -40,
+      opacity: 1,
+      duration: 1
+    })
+   });
+  
+}
 
-
-  gsap.to('#card2', {
-    scrollTrigger:{
-      trigger: '#card2',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: -40,
-    opacity: 1,
-    duration: 1
-  })
-
-
-  gsap.to('#card3', {
-    scrollTrigger:{
-      trigger: '#card3',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: 40,
-    opacity: 1,
-    duration: 1
-  })
-
-
-  gsap.to('#card4', {
-    scrollTrigger:{
-      trigger: '#card4',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: -40,
-    opacity: 1,
-    duration: 1
-  })
-
-
-  gsap.to('#card5', {
-    scrollTrigger:{
-      trigger: '#card5',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: 40,
-    opacity: 1,
-    duration: 1
-  })
-
-  gsap.to('#card6', {
-    scrollTrigger:{
-      trigger: '#card6',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: -40,
-    opacity: 1,
-    duration: 1
-  })
-
-  gsap.to('#card7', {
-    scrollTrigger:{
-      trigger: '#card7',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: 40,
-    opacity: 1,
-    duration: 1
-  })
-
-  gsap.to('#card8', {
-    scrollTrigger:{
-      trigger: '#card8',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: -40,
-    opacity: 1,
-    duration: 1
-  })
-
-  gsap.to('#card9', {
-    scrollTrigger:{
-      trigger: '#card9',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: 40,
-    opacity: 1,
-    duration: 1
-  })
-
-  gsap.to('#card10', {
-    scrollTrigger:{
-      trigger: '#card10',
-      start: "top 80%",
-      end: "bottom 80%",
-      markers: true,
-      triggerActions: 'restart pause resume none',
-      scrub: true
-    },
-    x: -40,
-    opacity: 1,
-    duration: 1
-  })
-
- });
+animateGsapCards();
 
 
 const fameSkins = [
@@ -819,7 +810,7 @@ const fameSkins = [
     name: "Ming Xiao",
     cardSrc: "./media/Figures/HallOfSkins/Card/MingXiao.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/MingXiao.webp",
-    skinClass: "War Of Warlords",
+    skinClass: "War of Warlords",
     description: "Adorned in imperial armor with dragon-themed embellishments, exuding authority and power.",
     effects: "Idle animation includes the riding of a chinese dragon, gaining height as he stands. "
   },
@@ -827,15 +818,15 @@ const fameSkins = [
     name: "Capricorn",
     cardSrc: "./media/Figures/HallOfSkins/Card/Capricornus.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/Capricornus.webp",
-    skinClass: "Tears Of Time",
+    skinClass: "Call of Stars",
     description: "Celestial armor with star motifs, giving the character a mystical, cosmic presence.",
-    effects: "Projectile attacks sparkle with shimmering stardust trails."
+    effects: "His summons embody the constellation of the stars."
   },
   {
     name: "Gemini",
     cardSrc: "./media/Figures/HallOfSkins/Card/Gemini.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/Gemini.webp",
-    skinClass: "Tears Of Time",
+    skinClass: "Call of Stars",
     description: "Mirrored design with harmonious aesthetics, embodying the concept of duality.",
     effects: "He posesses a dual personality, with one side being more aggressive and the other more defensive. Enough kills makes him switch..."
   },
@@ -859,7 +850,7 @@ const fameSkins = [
     name: "Sagittarus",
     cardSrc: "./media/Figures/HallOfSkins/Card/Sagittarus.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/Sagittarus.webp",
-    skinClass: "Tears Of Time",
+    skinClass: "Call of Stars",
     description: "Constellation-themed archer with armor that glows like a galaxy.",
     effects: "Using her divine protection of the Cosmos as she casts attacks, she leaves a trail of stars behind her."
   },
@@ -867,7 +858,7 @@ const fameSkins = [
     name: "Yuan-Lan",
     cardSrc: "./media/Figures/HallOfSkins/Card/YuanLan.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/YuanLan.webp",
-    skinClass: "War Of Warlords",
+    skinClass: "War of Warlords",
     description: "Clad in ceremonial war robes with ornate detailing, embodying noble discipline.",
     effects: "Summoning the dragons of the elements as he uses his abilities, he leaves a trail of dragon scales behind him."
   },
@@ -883,7 +874,7 @@ const fameSkins = [
     name: "Sun-Shangxiang",
     cardSrc: "./media/Figures/HallOfSkins/Card/SunShangxiang.webp",
     iconSrc: "./media/Figures/HallOfSkins/charIcons/SunShangxiang.webp",
-    skinClass: "War Of Warlords",
+    skinClass: "War of Warlords",
     description: "Stylish and agile warrior princess, dressed in elegant combat attire.",
     effects: "Leaving a trail of divine fire everywhere she strikes, her effects represent the Sun Goddes."
   },
@@ -905,10 +896,12 @@ function generateSkinMenu(){
   for(let i = 0; i < fameSkins.length; i++){
     document.getElementById('skinMenu').innerHTML += `
     <div id=card${i + 1} onclick="showSkinShowcasing(${i})" class="skinCard">
-      <img  src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
+      <img src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
     </div>
     `;
-  }
+
+    }
+  
 }
 
 
@@ -921,17 +914,99 @@ function showSkinShowcasing(index){
   document.body.style.overflowY = 'hidden';
 }
 
-function generateSkinData(index){
-  document.getElementById('skinShowcase').innerHTML 
-  = `<h1 id="skinName">${fameSkins[index].name}</h1>
-        <img id="skinIcon" src="${fameSkins[index].iconSrc}" alt="Skin Icon">
-        <img id="skinImage" src="${fameSkins[index].cardSrc}" alt="Skin Image" style="width:400px; height:"300px"/>
-        <div id="skinDescription">
-            <h2 id="skinDescriptionTitle">Description</h2>
-            <p id="skinDescriptionText">${fameSkins[index].description}</p>
-            <h2 id="skinEffectTitle">Sp. Effects</h2>
-            <p id="skinEffectText">${fameSkins[index].effects}</p>`;
+function generateSkinData(index) {
+  const skin = fameSkins[index];
+
+  document.getElementById('skinShowcase').innerHTML = `
+    <div class="skin-header">
+
+    <div id="navigatorButtons">
+      <button onclick="generateSkinData(${index - 1})" class="nav-button">← Back</button>
+      <button onclick="generateSkinData(${index + 1})" class="nav-button">Front →</button>
+      <button id="favoriteButton" onclick="favoriteCharacter(${index})" class="nav-button">🩶</button>
+      <button onclick="exitSkinShowcasing()" class="nav-button" id="exitSkinShowcasing">X</button>
+      </div>
+      <h1 id="skinName">${skin.name}</h1>
+      
+    </div>
+
+    <div class="skin-main">
+      <div class="skin-icon">
+        <img src="${skin.iconSrc}" alt="Skin Icon" />
+      </div>
+      <div class="skin-card">
+        <img id="skinImage" src="${skin.cardSrc}" alt="Skin Image" style="width:50%"  />
+      </div>
+    </div>
+
+    <div class="skin-details">
+      <div class="skin-section">
+        <h2>Description</h2>
+        <p>${skin.description}</p>
+      </div>
+      <div class="skin-section">
+        <h2>Sp. Effects</h2>
+        <p>${skin.effects}</p>
+      </div>
+    </div>
+  `;
 }
+
+let favoriteCharacters = []
+
+let isFavorite = true;
+function favoriteCharacter(index){
+  const skin = fameSkins[index];
+    if(isFavorite){
+      favoriteCharacters.push(skin);
+      document.getElementById('favoriteButton').innerText = '💔';
+      isFavorite = false;
+      console.log(favoriteCharacters);
+    }else{
+      const skinIndex = favoriteCharacters.findIndex(s => s.name === skin.name);
+      if (skinIndex !== -1) {
+        favoriteCharacters.splice(skinIndex, 1);
+      }
+      document.getElementById('favoriteButton').innerText = '🩶';
+      isFavorite = true;
+      console.log(favoriteCharacters);
+
+    }
+}
+
+
+  function filterSkins(skinClass){
+    document.getElementById('skinMenu').innerHTML = '';
+    for(let i = 0; i < fameSkins.length; i++){
+      if(fameSkins[i].skinClass === skinClass){
+        document.getElementById('skinMenu').innerHTML += `
+    <div id=card${i + 1} onclick="showSkinShowcasing(${i})" class="skinCard">
+      <img  src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
+    </div>
+    `;
+      }else{
+        continue;
+      }
+    }
+    animateGsapCards();
+
+  }
+
+
+  function resetNavigation(){
+    document.getElementById('skinMenu').innerHTML = '';
+    
+    document.getElementById('resetNavigation').style.animationName = 'spin';
+
+    setTimeout(() => {
+      document.getElementById('resetNavigation').style.animationName = '';
+    }, 600);
+
+    generateSkinMenu();
+    animateGsapCards();
+    location.reload();
+  }
+
 
 function exitSkinShowcasing(){
   document.getElementById('blackScreen').style.display = 'none';
@@ -939,3 +1014,80 @@ function exitSkinShowcasing(){
   document.getElementById('skinShowcase').style.display = 'none';
   document.body.style.overflowY = 'visible';
 } 
+
+function showPixelArtInfo(){
+  document.getElementById('pixelArtButton').innerHTML += `<h2>Draw!<h2>`;
+}
+
+function removePixelArtInfo(){
+  document.getElementById('pixelArtButton').innerHTML = `<h1>Pixel Art!</h1>`;
+}
+
+
+
+function showDrawingSection(){
+  document.getElementById('pixelArt').style.display = 'block';
+  generatePixelArtGrid();
+}
+
+
+let currentColorChosen = 'rgb(0,0,0)';
+
+function pickCustomColor(colorValue){
+  console.log(colorValue);
+  currentColorChosen = colorValue;
+}
+
+function pickColor(redValue, blueValue, greenValue){
+  currentColorChosen = `rgb(${redValue},${blueValue},${greenValue})`;
+}
+
+let isMouseDown = false;
+function generatePixelArtGrid(){
+  document.getElementById('pixelArtScreen').innerHTML = '';
+  const pixelArtScreen = document.getElementById('pixelArtScreen');
+  for(let i = 0; i < 400; i++){
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.id = `pixel${i}`;
+    pixel.style.backgroundColor = 'white';
+    pixel.style.width = '20px';
+    pixel.style.height = '20px';
+    pixel.style.border = '0.1px black solid';
+    pixel.style.userSelect = 'none';
+
+    pixel.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      fillPixel(pixel, currentColorChosen);
+      e.preventDefault();
+    });
+
+    pixel.addEventListener('mouseover', () => {
+      if(isMouseDown){
+        fillPixel(pixel, currentColorChosen);
+      }
+    });
+
+    pixelArtScreen.appendChild(pixel);
+  }
+
+  document.body.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+}
+
+function fillScreen(){
+  for(let i = 0; i < 400; i ++){
+    document.getElementById(`pixel${i}`).style.backgroundColor = currentColorChosen;
+  }
+}
+function clearScreen(){
+  for(let i = 0; i < 400; i ++){
+    document.getElementById(`pixel${i}`).style.backgroundColor = 'white';
+  }
+}
+
+function fillPixel(pixel, currentColor){
+  pixel.style.backgroundColor = currentColor;
+}
+  

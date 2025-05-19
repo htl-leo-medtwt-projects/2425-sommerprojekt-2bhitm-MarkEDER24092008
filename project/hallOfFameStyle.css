@@ -1,8 +1,16 @@
 
+:root{
+    --text: rgb(200, 175, 175);
+    --text2: rgb(66, 28, 28);
+    --box-background: rgb(77, 66, 66);
+    --box-shadow: rgb(84, 48, 48);
+}
+
+
 #skinMenu{
     display: grid;
     grid-template-columns: auto auto;
-    margin-top: 40%;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
     gap: 10px;
@@ -22,9 +30,9 @@
 0%{transform: scale(1.02); box-shadow: 10px 10px 10px black;}    
 }
 
-
-
-#skinShowcase{
+#skinShowcase {
+    color: #eee;
+    padding: 20px;
     position: fixed;
     z-index: 3000;
     top: 0%;
@@ -33,3 +41,199 @@
     bottom: 0%;
     display: none;
 }
+  
+  
+  .skin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .skin-main {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .skin-icon img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #b52722;
+    background: #222;
+    border-radius: 10px;
+  }
+  
+  .skin-card img {
+    width: 400px;
+    height: auto;
+    border: 3px solid #b52722;
+    border-radius: 12px;
+    background: #1c1c1c;
+  }
+  
+  .skin-details {
+    margin-top: 30px;
+  }
+  
+  .skin-section {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-left: 5px solid #b52722;
+  }
+  
+
+  .nav-button {
+    background: #b52722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+    .nav-button:hover {
+        background: #a41e1e;
+    }
+
+  #navigatorButtons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+
+  #navigateSkins {
+    margin: 20px;
+  }
+  
+  #skinNavBar {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    border: 3px solid var(--box-background);
+    border-radius: 12px;
+    width: max-content;
+    font-family: 'Press Start 2P', monospace;
+    color: #f0f0f0;
+    gap: 20px;
+  }
+  
+  
+  .nav-categories {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  
+  .nav-option {
+    background-color: #1a1a1a;
+    border: 2px solid var(--text);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-option:hover,
+  .nav-option.active {
+    background-color: var(--text);
+    color: #000;
+  }
+  .nav-search input {
+    width: 100%;
+    padding: 6px;
+    background-color: #1a1a1a;
+    border: 2px solid var(--text);
+    border-radius: 6px;
+    font-size: 10px;
+    color: #fff;
+    font-family: inherit;
+  }
+  
+  /* Favorite Checkbox */
+  .nav-favorite label {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .nav-favorite input[type="checkbox"] {
+    transform: scale(1.2);
+    accent-color: #d22121;
+  }
+  
+
+  #resetNavigation {
+   animation: 1s ease-in-out 1;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+
+
+  #pixelArtButton{
+    margin-left: 20%;
+    margin-right: 50%;
+    background-color: var(--box-background);
+  }
+
+
+  #pixelArtScreen {
+    width: min-content;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+    
+  }
+
+  #pixelArt{
+    background-color: var(--box-background);
+    width: min-content;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  #colorMenu{
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    -ms-flex-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+  }
+
+  .colorChoices{
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+
+  #pixelArtTools{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .toolChoices{
+    width: 50px;
+    height: 50px;
+  }
