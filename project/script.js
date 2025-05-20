@@ -1091,3 +1091,7 @@ function fillPixel(pixel, currentColor){
   pixel.style.backgroundColor = currentColor;
 }
   
+
+function leaveDrawingSection(){
+  document.getElementById('pixelArt').style.display = 'none';
+}
