@@ -225,3 +225,16 @@ body{
     0%{transform: translateY(5px);}
     100%{transform: translateY(-5px);}
 }
+
+#winMessage{
+    background-color: var(--box-background);
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    top: 400%;
+    z-index: 100000;
+    border: black solid 2px;
+    display: none;
+    text-align: center;
+    
+}

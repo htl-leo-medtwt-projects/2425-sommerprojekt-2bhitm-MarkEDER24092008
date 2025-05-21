@@ -84,7 +84,12 @@ let prizePool = [
 function crackEgg(){
   let randomWin = Math.floor(Math.random() * cheat.length);
   document.getElementById('egg').style.display = 'none';
-  alert("You got - " + cheat[randomWin].desc);
+  // alert("You got - " + cheat[randomWin].desc);
+  document.getElementById('winMessage').style.display = 'block';
+  document.getElementById('blackScreen').style.display = 'block';
+
+  document.getElementById('winMessage').innerHTML = 
+  `<h1>Message!</h1> <p>You got - ${cheat[randomWin].desc}</p>`;
   //CHANGE TO cheat FOR DEMONSTRATION
 
   if(prizePool[randomWin].desc == cheat[0].desc){
@@ -97,6 +102,11 @@ function crackEgg(){
 }
 
 
+function closeMessage(){
+  document.getElementById('winMessage').style.display = 'none';
+  document.getElementById('blackScreen').style.display = 'none';
+
+}
 
 //********************* 
 //****CHARACTER PAGE***
@@ -954,13 +964,16 @@ function generateSkinData(index) {
 
 let favoriteCharacters = []
 
-let isFavorite = true;
+// let isFavorite = true;
+let isFavorite = false;
+
 function favoriteCharacter(index){
   const skin = fameSkins[index];
+  isFavorite = !isFavorite;
     if(isFavorite){
       favoriteCharacters.push(skin);
       document.getElementById('favoriteButton').innerText = '💔';
-      isFavorite = false;
+      // isFavorite = false;
       console.log(favoriteCharacters);
     }else{
       const skinIndex = favoriteCharacters.findIndex(s => s.name === skin.name);
@@ -968,7 +981,7 @@ function favoriteCharacter(index){
         favoriteCharacters.splice(skinIndex, 1);
       }
       document.getElementById('favoriteButton').innerText = '🩶';
-      isFavorite = true;
+      // isFavorite = true;
       console.log(favoriteCharacters);
 
     }
@@ -991,6 +1004,45 @@ function favoriteCharacter(index){
     animateGsapCards();
 
   }
+
+
+  function filterForName(searchName){
+    
+    for(let i = 0; i < fameSkins.length; i ++){
+      if(fameSkins[i].name === searchName){
+        document.getElementById('skinMenu').innerHTML = '';
+        document.getElementById('skinMenu').innerHTML += `
+        <div id=card${i + 1} onclick="showSkinShowcasing(${i})" class="skinCard">
+          <img  src="${fameSkins[i].cardSrc}" alt="${fameSkins[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
+        </div>
+        `;
+          }else{
+            continue;
+          }
+        }
+        animateGsapCards();
+    
+      }
+
+      let isFavorited = false;
+      function filterForFavorites(){
+        isFavorited = !isFavorited;
+        
+        if(isFavorited){
+          for(let i = 0; i < fameSkins.length; i ++){
+              document.getElementById('skinMenu').innerHTML = '';
+              document.getElementById('skinMenu').innerHTML += `
+              <div id=card${i + 1} onclick="showSkinShowcasing(${i})" class="skinCard">
+                <img  src="${favoriteCharacters[i].cardSrc}" alt="${favoriteCharacters[i].name} Card" class="skinCardImage" style="width:400px; height:"300px"/>
+              </div>
+              `;
+              }
+        }else{
+          generateSkinData();
+        }
+      }
+
+
 
 
   function resetNavigation(){
@@ -1095,3 +1147,5 @@ function fillPixel(pixel, currentColor){
 function leaveDrawingSection(){
   document.getElementById('pixelArt').style.display = 'none';
 }
+
+

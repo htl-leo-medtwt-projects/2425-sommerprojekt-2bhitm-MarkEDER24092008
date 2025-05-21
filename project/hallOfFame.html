@@ -24,12 +24,12 @@
             </div>
           
             <div class="nav-search">
-              <input type="text" id="skinSearch" placeholder="Search skin name..." />
+              <input type="text" id="skinSearch" oninput="filterForName(this.value)" placeholder="Search skin name..." />
             </div>
           
             <div class="nav-favorite">
               <label>
-                <input type="checkbox" id="favFilter" />
+                <input onclick="filterForFavorites()" type="checkbox" id="favFilter" />
                 Show Favorites
               </label>
             </div>
