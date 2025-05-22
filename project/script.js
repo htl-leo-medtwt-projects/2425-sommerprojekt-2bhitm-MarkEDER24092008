@@ -82,17 +82,16 @@ let prizePool = [
 ]
 
 function crackEgg(){
-  let randomWin = Math.floor(Math.random() * cheat.length);
+  let randomWin = Math.floor(Math.random() * prizePool.length);
   document.getElementById('egg').style.display = 'none';
-  // alert("You got - " + cheat[randomWin].desc);
   document.getElementById('winMessage').style.display = 'block';
   document.getElementById('blackScreen').style.display = 'block';
 
   document.getElementById('winMessage').innerHTML = 
-  `<h1>Message!</h1> <p>You got - ${cheat[randomWin].desc}</p>`;
+  `<h1>Message!</h1> <p>You got - ${prizePool[randomWin].desc}</p>`;
   //CHANGE TO cheat FOR DEMONSTRATION
 
-  if(prizePool[randomWin].desc == cheat[0].desc){
+  if(prizePool[randomWin].desc == prizePool[0].desc){
     let audio = new Audio("./media/Audio/winSfx.mp3");
     audio.play();
   const secretSiteImg = document.getElementById('secretSite');
