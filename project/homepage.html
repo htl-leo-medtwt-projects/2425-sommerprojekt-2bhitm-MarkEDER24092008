@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="./generalStyle.css">
     <link rel="stylesheet" href="./homepageStyle.css">
     <script src="./anime iife.js"></script>
+
+    <link rel="stylesheet" href="./responsiveGeneral.css">
+    <link rel="stylesheet" href="./responsiveHome.css">
    
     <script src="./script.js" defer></script>
     <link rel="icon" type="image/x-icon" href="./media/Misc/favIcon1.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body id="body">
-    <div id="quizRemainder">
     <h1 id="title">Welcome To Soul Knight</h1>
 
     <div id="menu">
@@ -24,10 +27,11 @@
 
 
 
+    <div id="navigationButtons">
     <div class="navButtons" id="introButton" onclick="scrollToInfo()">Intro</div>
     <div class="navButtons" id="aboutButton" onclick="scrollToAbout()">About</div>
     <div class="navButtons" id="moreButton" onclick="scrollToMore()">More</div>
-
+</div>
 
     <img onclick="scrollToTop()" id="goUpButton" src="./media/homeImages/goUp.png" alt="Up">
 

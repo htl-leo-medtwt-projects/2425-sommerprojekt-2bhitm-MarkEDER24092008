@@ -1,0 +1,97 @@
+/* Responsive styles for max-width 430px */
+@media screen and (max-width: 430px) {
+    body{
+        height: auto;
+    }
+
+    #menu{
+        margin-left: 20%;
+        margin-right: 5%;
+
+    }
+
+    #goUpButton{
+        position: fixed;
+        z-index: 99999;
+        width: 20%;
+        left: 5%;
+        bottom: 16%;
+    }
+
+    .navButtons{
+        position: static;
+        width: max-content;
+    }
+
+    #moreButton{
+        top: 40%;
+    }
+
+    #navigationButtons{
+        position: static;
+    }
+
+    .infoBoxes{
+        position:static;
+        margin-right: auto;
+        width: 50%;
+        font-size: 10px;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
+
+    #introBox{
+        margin-top: 100%;
+
+        position: static;
+    }
+
+    #aboutBox{
+        position: static;
+    }
+
+    #moreBox{
+        position: static;
+    }
+
+    #gashaponContainer{
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-top: 0%;
+        margin-bottom: 80%;
+    }
+
+    #introImg, #aboutImg, #moreImg{
+        display: none;
+    }
+
+    #gashaponCooldownBox{
+        position: absolute;
+        top: 263%;
+        left: auto;
+        right: 40%;
+    }
+
+    #winMessage{
+        width: max-content;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 10%;
+        right: 10%;
+        top: 260%;
+        z-index: 99999 !important;
+    }
+
+    #egg{
+        position: absolute;
+        top: 270%;
+    }
+
+    #blackScreen{
+        z-index: 9999;
+        height: 900px !important;
+    }
+}

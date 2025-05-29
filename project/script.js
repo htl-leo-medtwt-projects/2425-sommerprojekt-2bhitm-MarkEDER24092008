@@ -2,30 +2,6 @@
 //******HOME PAGE********
 //***********************
 
-
-/*
-const { animate } = anime;
-
-animate('.square', { x: '17rem' });
-
-animate('.navButtons', {
-  // Property keyframes
-  y: [
-    { to: '-1.75rem', ease: 'outExpo', duration: 600 },
-    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-  ],
-  // Property specific parameters
-  rotate: {
-    from: '-1turn',
-    delay: 0
-  },
-  delay: (_, i) => i * 50, // Function based value
-  ease: 'inOutCirc',
-  loopDelay: 1000,
-  loop: true
-});
-*/
-
 function scrollToInfo() {
     window.scrollBy({ top: 110 * 8, behavior: 'smooth' }); 
 }
@@ -82,16 +58,16 @@ let prizePool = [
 ]
 
 function crackEgg(){
-  let randomWin = Math.floor(Math.random() * prizePool.length);
+  let randomWin = Math.floor(Math.random() * cheat.length);
   document.getElementById('egg').style.display = 'none';
   document.getElementById('winMessage').style.display = 'block';
   document.getElementById('blackScreen').style.display = 'block';
 
   document.getElementById('winMessage').innerHTML = 
-  `<h1>Message!</h1> <p>You got - ${prizePool[randomWin].desc}</p>`;
+  `<h1>Message!</h1> <p>You got - ${cheat[randomWin].desc}</p>`;
   //CHANGE TO cheat FOR DEMONSTRATION
 
-  if(prizePool[randomWin].desc == prizePool[0].desc){
+  if(cheat[randomWin].desc == cheat[0].desc){
     let audio = new Audio("./media/Audio/winSfx.mp3");
     audio.play();
   const secretSiteImg = document.getElementById('secretSite');
@@ -311,12 +287,15 @@ const headImages = [
     document.getElementById('body').style.overflowY = 'hidden';
     document.getElementById('characterBuilderOutput').style.top = '350%';
     document.getElementById('menu').style.display = 'none';
+    document.getElementById('blackScreen').style.display = 'block';
   }
 
 
   function exitCharacterBuilder(){
     document.getElementById('characterBuilderOutput').style.display = 'none';
     document.getElementById('body').style.overflowY = 'visible';
+    document.getElementById('blackScreen').style.display = 'none';
+
   }
 
 
@@ -336,9 +315,6 @@ const headImages = [
   }
 
   const range = document.getElementById('imageWidthRange');
-
-
-
 
 
 function evaluateStrength(){
@@ -1000,8 +976,10 @@ function favoriteCharacter(index){
         continue;
       }
     }
-    animateGsapCards();
-
+    
+    setTimeout( () => {
+      animateGsapCards();
+    }, 500);
   }
 
 
@@ -1019,7 +997,9 @@ function favoriteCharacter(index){
             continue;
           }
         }
-        animateGsapCards();
+        setTimeout( () => {
+          animateGsapCards();
+        }, 500);
     
       }
 
@@ -1039,6 +1019,10 @@ function favoriteCharacter(index){
         }else{
           generateSkinData();
         }
+
+        setTimeout( () => {
+          animateGsapCards();
+        }, 500);
       }
 
 

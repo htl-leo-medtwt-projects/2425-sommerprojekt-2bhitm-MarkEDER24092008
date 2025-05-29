@@ -1,0 +1,93 @@
+@media screen and (max-width: 430px) {
+
+    
+
+    .gallery{
+        position: relative;
+        left: auto;
+        right: auto;
+        margin-top: 40%;
+    }
+
+    .gallery img{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        opacity: 0;
+    }
+
+    .gallery > input:checked ~ img {
+        transform: 
+          rotate(calc(var(--i)* 360deg/8)) translate(calc(1.2*var(--s))) 
+          rotate(calc(var(--i)*-360deg/8));
+          opacity: 100%;
+      }
+
+      .character-card{
+        position: relative;
+        left: 0%;
+        right: 0%;
+        width: auto;
+        z-index: 9999999;
+      }
+
+      #characterBuilder{
+        position: relative;
+        margin-top: 50%;
+        margin-bottom: 50%;
+        z-index: 9999;
+      }
+
+      #characterMakingScreen{
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: auto;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+      }
+
+
+      .blackBkg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 99999 !important;
+      }
+
+      #sliderHeadImage{
+        width: 150px;
+      }
+
+      #sliderTorsoImage{
+        width: 120px;
+      }
+
+      #sliderLegsImage{
+        width: 150px;
+      }
+
+      .rangerStyle{
+        width: 40%;
+      }
+
+      #strengthContainer{
+        text-align: right;
+        font-size: 10px;
+      }
+
+      #exitCharacterBuilder{
+        position: absolute;
+        top: 10%;
+        right: 20%;
+        background-color: var(--box-background);
+        z-index: 9999999;
+      }
+}

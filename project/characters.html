@@ -8,9 +8,13 @@
    
     <link rel="stylesheet" href="./generalStyle.css">
     <link rel="stylesheet" href="./characterStyle.css">
+
+    <link rel="stylesheet" href="./responsiveGeneral.css">
+    <link rel="stylesheet" href="./responsiveCharacters.css">
+
     <script src="./script.js" defer></script>
     <link rel="icon" type="image/x-icon" href="./media/Misc/favIcon3.webp">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -27,6 +31,7 @@
     
     <div class="gallery">
         <input onclick="hideCharacterOutput()" type="checkbox">
+    
         <img onclick="showCharacterInfo(0)" src="./media/Figures/Characters/Airbender.gif">
         <img onclick="showCharacterInfo(1)" src="./media/Figures/Characters/Assassin.gif">
         <img onclick="showCharacterInfo(2)" src="./media/Figures/Characters/Engineer.gif">
@@ -35,6 +40,7 @@
         <img onclick="showCharacterInfo(5)" src="./media/Figures/Characters/SwordMaster.gif">
         <img onclick="showCharacterInfo(6)" src="./media/Figures/Characters/Demonmancer.gif">
         <img onclick="showCharacterInfo(7)" src="./media/Figures/Characters/Druid.gif">
+  
       </div>
 
 
@@ -48,7 +54,7 @@
         </div>
 
         <div id="characterBuilderOutput">
-            <div id="blackScreen"></div>
+            <div id="blackScreen" class="blackBkg" style="display: block;"></div>
           <div id="characterMakingScreen">
 
             <img onclick="randomizeCharacter()" id="randomizerButton" src="./media/Misc/RandomizerButton.png" width="50px" height="auto" alt="randomize">
