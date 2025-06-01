@@ -31,5 +31,37 @@
         text-align: center;
         font-size: 80px;
     }
-    
+
+
+
+    #keyboard{
+        height: 70%;
+    }
+
+    #playingKeys{
+        height: 400px;
+    }
+    #blackPlayingKeys{
+        height: 100px;
+    }
+
+    #metronomeBpm{
+        margin-bottom: 10%;
+        margin-right: 10px;
+    }
+
+    #metronome{
+        margin-bottom: 5%;
+    }
+
+    #changePiano{
+        top: auto;
+        bottom: 8%;
+        left: 2%;
+        right: auto;
+        position: absolute;
+        padding: 30px;
+        font-weight: bolder;
+        font-size: 30px;
+    }
 }

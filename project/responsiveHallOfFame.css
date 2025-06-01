@@ -1,0 +1,41 @@
+@media screen and (max-width: 430px) {
+
+    #skinMenu{
+        grid-template-columns: auto;
+        margin-left: -30px;
+    }
+
+    .skinCard{
+        width: 10%;
+        margin-left: 1px;
+    }
+
+    .skin-section{
+        width: 45%;
+    }
+
+    #navigateSkins{
+        width: auto;
+    }
+
+    #skinNavBar{
+        width: 100%;
+    }
+
+    .nav-option{
+        width: 30%;
+        padding: 1px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+        font-size: 8px;
+    }
+
+    #skinSearch{
+        width: 100%;
+        margin-left: -10px;
+    }
+    #favFilter{
+        margin-right: -10px;
+    }
+}
